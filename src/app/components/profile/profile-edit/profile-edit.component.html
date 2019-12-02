@@ -1,0 +1,30 @@
+<p>profile-edit works!</p>
+<div class="profileEditForm">
+    <mat-form-field>
+        <input matInput placeholder="First Name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Last Name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Birthday">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <example-tel-input placeholder="Phone Number"></example-tel-input>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput placeholder="Other Info"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

@@ -1,0 +1,9 @@
+<p>comments-index works!</p>
+<h1>Comments</h1>
+<div class=mainContainer>
+    <div class="container" *ngFor="let Comment of Comments.results;">
+        <h3>{{Comment.Title}}</h3>
+        <p>{{Comment.Content}}</p>
+        <span class="time-right">{{Comment.DateSent}}</span>
+    </div>
+</div>
