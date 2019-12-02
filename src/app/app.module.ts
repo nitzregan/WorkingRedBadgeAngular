@@ -1,7 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
-import { MatToolbarModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTableModule,
+  MatTableDataSource,
+} from '@angular/material';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +45,36 @@ import { EventDeleteComponent } from './components/event/event-delete/event-dele
 import { EventDetailComponent } from './components/event/event-detail/event-detail.component';
 import { EventEditComponent } from './components/event/event-edit/event-edit.component';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
+
+const routes = [
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'teammessages', component: TeamMessagingIndexComponent },
+  { path: 'teammessages/create', component: TeamMessagingCreateComponent },
+  { path: 'teammessages/detail/:MessageID', component: TeamMessagingDetailComponent },
+  { path: 'teammessages/update/:MessageID', component: TeamMessagingUpdateComponent },
+  { path: 'teammessages/delete/:MessageID', component: TeamMessagingDeleteComponent },
+  { path: 'team', component: TeamIndexComponent },
+  { path: 'team/create/:ProfileID', component: TeamCreateComponent },
+  { path: 'team/deatail/:TeamID', component: TeamDetailComponent },
+  { path: 'team/update/:TeamID', component: TeamUpdateComponent },
+  { path: 'team/delete/:TeamID', component: TeamDeleteComponent },
+  // { path: 'team/userid/:UserID', component: TeamUseridComponent },
+  // { path: 'team/addplayer/:ProfileID', component: TeamAddplayerComponent },
+  // { path: 'team/removeplayer/:ProfileID', component: TeamRemoveplayerComponent },
+  { path: 'event', component: EventIndexComponent },
+  { path: 'event/create', component: EventCreateComponent },
+  { path: 'event/detail/:EventID/:TeamID', component: EventDetailComponent },
+  { path: 'event/edit', component: EventEditComponent },
+  { path: 'event/delete/:EventID', component: EventCreateComponent },
+  { path: 'profile/:TeamID', component: ProfileIndexComponent },
+  { path: 'profile', component: ProfileEditComponent },
+  { path: 'profile/:TeamID', component: GetProfileByTeamComponent },
+  { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
+  { path: '**', component: RegistrationComponent }
+];
+
 
 @NgModule({
   declarations: [
@@ -66,7 +109,19 @@ import { EventIndexComponent } from './components/event/event-index/event-index.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableDataSource,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
