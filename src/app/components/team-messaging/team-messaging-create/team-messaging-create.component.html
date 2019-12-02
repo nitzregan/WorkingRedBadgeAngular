@@ -1,1 +1,17 @@
-<p>team-messaging-create works!</p>
+<h1>Create a Message</h1>
+<hr />
+<form (ngSubmit)="onSubmit()" [formGroup]="teamMessagingCreateForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Title" formControlName="Title" type="Title" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Content" formControlName="Content" type="Content" required />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Team Message</button>
+</form>

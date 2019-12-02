@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 import {
   MatToolbarModule,
@@ -10,16 +11,25 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
-  MatTableDataSource,
+  MatNativeDateModule,
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+import { AuthService } from './services/auth.service';
+import { EventService } from './services/event.service';
+import { ProfileService } from 'src/app/services/profile.service';
+import { TeamService } from './services/team.service';
+import { TeamMessagingService } from './services/team-messaging.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { GetProfileComponent } from './components/profile/get-profile/get-profile.component';
 import { GetProfileByTeamComponent } from './components/profile/get-profile-by-team/get-profile-by-team.component';
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
@@ -34,17 +44,20 @@ import { TeamDeleteComponent } from './components/team/team-delete/team-delete.c
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamIndexComponent } from './components/team/team-index/team-index.component';
 import { TeamUpdateComponent } from './components/team/team-update/team-update.component';
+import { TeamAddplayerComponent } from './components/team/team-addplayer/team-addplayer.component';
+import { TeamRemoveplayerComponent } from './components/team/team-removeplayer/team-removeplayer.component';
+import { TeamUseridComponent } from './components/team/team-userid/team-userid.component';
 import { LoginComponent } from './components/login/login.component';
 import { CommentsCreateComponent } from './components/comments/comments-create/comments-create.component';
 import { CommentsDeleteComponent } from './components/comments/comments-delete/comments-delete.component';
 import { CommentsDetailComponent } from './components/comments/comments-detail/comments-detail.component';
 import { CommentsIndexComponent } from './components/comments/comments-index/comments-index.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { EventCreateComponent } from './components/event/event-create/event-create.component';
 import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
 import { EventDetailComponent } from './components/event/event-detail/event-detail.component';
 import { EventEditComponent } from './components/event/event-edit/event-edit.component';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
+
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -60,9 +73,15 @@ const routes = [
   { path: 'team/deatail/:TeamID', component: TeamDetailComponent },
   { path: 'team/update/:TeamID', component: TeamUpdateComponent },
   { path: 'team/delete/:TeamID', component: TeamDeleteComponent },
-  // { path: 'team/userid/:UserID', component: TeamUseridComponent },
-  // { path: 'team/addplayer/:ProfileID', component: TeamAddplayerComponent },
-  // { path: 'team/removeplayer/:ProfileID', component: TeamRemoveplayerComponent },
+
+  { path: 'team/userid/:UserID', component: TeamUseridComponent },
+  { path: 'team/addplayer/:ProfileID', component: TeamAddplayerComponent },
+  { path: 'team/removeplayer/:ProfileID', component: TeamRemoveplayerComponent },
+
+  { path: 'comments/:ProfileID', component: CommentsIndexComponent },
+  { path: 'comments/create/:ProfileID', component: CommentsCreateComponent },
+  { path: 'comments/delete/:CommentID', component: CommentsDeleteComponent },
+
   { path: 'event', component: EventIndexComponent },
   { path: 'event/create', component: EventCreateComponent },
   { path: 'event/detail/:EventID/:TeamID', component: EventDetailComponent },
@@ -72,7 +91,11 @@ const routes = [
   { path: 'profile', component: ProfileEditComponent },
   { path: 'profile/:TeamID', component: GetProfileByTeamComponent },
   { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
-  { path: '**', component: RegistrationComponent }
+  // { path: '**', component: RegistrationComponent },
+  { path: '**', component: LoginComponent }
+
+
+  
 ];
 
 
@@ -105,7 +128,10 @@ const routes = [
     EventDeleteComponent,
     EventDetailComponent,
     EventEditComponent,
-    EventIndexComponent
+    EventIndexComponent,
+    TeamAddplayerComponent,
+    TeamRemoveplayerComponent,
+    TeamUseridComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,10 +146,13 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatTableDataSource,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AppRoutingModule,
+    FullCalendarModule
   ],
-  providers: [],
+  providers: [AuthService, EventService, TeamMessagingService, ProfileService, TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

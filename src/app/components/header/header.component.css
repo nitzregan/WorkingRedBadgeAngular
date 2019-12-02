@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva|Yanone+Kaffeesatz&display=swap');
+.flex-filler{
+    flex: 1 1 auto;
+}
+.nav-btn{
+    margin-right: .5em;
+    background-color:#F55D3E;
+}
+.mat-toolbar{
+    background-color: #274C5E;
+}
+.mat-toolbar{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.icon{
+    font-size: 45px;
+}

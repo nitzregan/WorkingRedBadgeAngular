@@ -1,1 +1,2 @@
-<p>calendar works!</p>
+<a routerLink="/event/create"><button mat-raised-button class ="nav-btn" color="primary" type="submit">Create Event</button></a>
+<full-calendar (dateClick)="handleDateClick($event)" [plugins]="calendarPlugins" [events]='calendarEvents'></full-calendar>

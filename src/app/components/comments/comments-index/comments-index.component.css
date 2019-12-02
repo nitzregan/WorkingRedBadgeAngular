@@ -1,0 +1,11 @@
+.container {
+    border: 2px solid #DEDEDE;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  .time-right {
+    float: right;
+    color: #aaa;
+  }

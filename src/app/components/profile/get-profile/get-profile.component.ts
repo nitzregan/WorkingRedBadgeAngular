@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Profile } from 'src/app/models/Profile';
-import {MatTableDataSource} from '@angular/material';
-import {ActivatedRoute } from '@angular/router';
-
+import { MatTableDataSource } from '@angular/material';
+import { ActivatedRoute } from '@angular/router';
+import { RegisterUser } from 'src/app/models/register-user';
 
 @Component({
   selector: 'app-get-profile',
@@ -13,17 +13,22 @@ import {ActivatedRoute } from '@angular/router';
 export class GetProfileComponent implements OnInit {
 
   Profile;
+  register: RegisterUser;
   columnName = [
     'ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments'];
-    dataSource: MatTableDataSource<Profile>;
-  constructor(private profileService: ProfileService, private _activatedRoute: ActivatedRoute) { }
+  dataSource: MatTableDataSource<Profile>;
+  
+  constructor(private profileService: ProfileService, private _activatedRoute: ActivatedRoute) {
+    this._activatedRoute.paramMap.subscribe(routerData => {
+      console.log(routerData.get('UserID'));
+      this.profileService.GetProfile(routerData.get('UserID')).subscribe((profile: Profile[]) => {
+        this.dataSource = new MatTableDataSource<Profile>(profile);
+        console.log(profile, this.register.role);
+        this.Profile = profile;
+      });
+    });
+  }
 
   ngOnInit() {
-    this._activatedRoute.paramMap.subscribe(routerData => {
-      this.profileService.GetProfile(routerData.get('id')).subscribe((profile: Profile[])=>{this.dataSource = new MatTableDataSource<Profile>(profile);
-      console.log(profile);
-      this.Profile=profile;
-    });
-    });
   }
 }

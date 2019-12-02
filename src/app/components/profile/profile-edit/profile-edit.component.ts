@@ -31,7 +31,8 @@ export class ProfileEditComponent implements OnInit {
   }
 
   onSubmit() {
-    this.profileService.UpdateProfile(this.profileEditForm.value);
+    this.profileService.UpdateProfile(this.profileEditForm.value).subscribe(data => console.log(data));
+    // console.log(this.profileEditForm.value);
   }
 
 }

@@ -1,1 +1,16 @@
-<p>team-create works!</p>
+<h2>Team Create</h2>
+<hr />
+<body>
+    <div class="TeamCreate">
+        <form (ngSubmit)="onSubmit()" [formGroup]="teamCreateForm">
+            <div>
+                <div>
+                    <mat-form-field>
+                        <input matInput placeholder="Team Name" formControlName="TeamName" type="TeamName" required />
+                    </mat-form-field>
+                </div>
+            </div>
+            <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Team</button>
+        </form>
+    </div>
+</body>

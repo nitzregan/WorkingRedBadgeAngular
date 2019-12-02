@@ -3,17 +3,14 @@ import { TeamMessaging } from 'src/app/models/team-messaging';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TeamMessagingService } from 'src/app/services/team-messaging.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
 @Component({
   selector: 'app-team-messaging-update',
   templateUrl: './team-messaging-update.component.html',
   styleUrls: ['./team-messaging-update.component.css']
 })
 export class TeamMessagingUpdateComponent implements OnInit {
-
   teamMessaging: TeamMessaging;
   editForm: FormGroup;
-
   //private router: Router
   constructor(private formBuilder: FormBuilder, private teamMessagingService: TeamMessagingService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -22,11 +19,9 @@ export class TeamMessagingUpdateComponent implements OnInit {
         this.createForm();
       });
     });
-  } 
-
+  }
   ngOnInit() {
   }
-
   createForm() {
     this.editForm = this.formBuilder.group({
       MessageID: new FormControl(this.teamMessaging.MessageID),
@@ -35,7 +30,6 @@ export class TeamMessagingUpdateComponent implements OnInit {
       File: new FormControl(this.teamMessaging.File),
     });
   }
-
   onSubmit() {
     const updatedTeamMessage: TeamMessaging = {
       MessageID: this.editForm.value.MessageID,

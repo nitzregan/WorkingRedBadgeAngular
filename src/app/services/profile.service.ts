@@ -12,6 +12,7 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
 
   GetProfile(UserID) {
+    console.log(UserID)
       return this.http.get(`${Api_Url}/api/Profile?UserID=${UserID}`, {headers: this.getHeaders() });
   }
 
@@ -20,7 +21,8 @@ export class ProfileService {
   }
 
   UpdateProfile(ProfileEdit) {
-    return this.http.put(`${Api_Url}/api/Profile` , {headers: this.getHeaders() });
+    console.log("hi");
+    return this.http.put(`${Api_Url}/api/Profile`, ProfileEdit, {headers: this.getHeaders() });
   }
 
   private getHeaders() {

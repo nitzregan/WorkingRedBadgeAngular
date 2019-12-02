@@ -1,14 +1,14 @@
 <p>get-profile works!</p>
 <mat-card class="getProfileComponentCard" *ngIf="Profile">
     <mat-card-header>
-      <mat-card-title><span>{{Profile.FirstName} {Profile.LastName}}</span></mat-card-title>
+      <mat-card-title><span>{{Profile.FirstName}} {{Profile.LastName}}</span></mat-card-title>
       <mat-card-subtitle><span>{{Team.TeamName}}</span></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <div>
             <label>Name: </label>
             <br>
-            <span>{{Profile.FirstName} {Profile.LastName}}</span>
+            <span>{{Profile.FirstName}} {{Profile.LastName}}</span>
             <br>
             <label>Birthday: </label>
             <br>
@@ -31,12 +31,12 @@
             <span></span>
             <label>Parent: </label>
             <br>
-            <span *ngIf="register.role = Athlete">{{Profle.ParentUsername}}</span>
+            <span *ngIf="register.role == Athlete">{{Profle.ParentUsername}}</span>
             <br>
             <span></span>
             <label>Child: </label>
             <br>
-            <span *ngIf="register.role = Parent">{{Profile.AthleteUsername}}</span>
+            <span *ngIf="register.role == Parent">{{Profile.AthleteUsername}}</span>
             <br>
             <span></span>
             <label>Teams: </label>

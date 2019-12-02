@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { UserInfo } from '../models/user-info';
 const Api_Url = 'https://localhost:44373';
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,11 @@ export class AuthService {
   login(loginInfo){
     const authString=
       `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`
-       return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {localStorage.setItem('id_token', token.access_token);
+       return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
+         localStorage.setItem('id_token', token.access_token);
+         this.currentUser().subscribe((_userInfo: UserInfo) =>{
+           localStorage.setItem('role',_userInfo.Role);
+         });
        console.log(token);
        this.isLoggedIn.next(true);
        this.router.navigate(['profile/get-profile/:UserID']);
@@ -29,7 +34,7 @@ export class AuthService {
       return new Observable(observer => observer.next(false));
     }
     const authHeader = new HttpHeaders().set('Authorization', `Bearer${localStorage.getItem('id_token')}`);
-    return this.http.get( `${Api_Url}/api/Account/Userinfo`, {headers: authHeader});
+    return this.http.get( `${Api_Url}/api/Account/UserInfo`, {headers: authHeader});
   }
   logout() {
     localStorage.clear();

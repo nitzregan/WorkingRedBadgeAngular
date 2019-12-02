@@ -4,11 +4,11 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TeamService } from 'src/app/services/team.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
-  selector: 'app-team-update',
-  templateUrl: './team-update.component.html',
-  styleUrls: ['./team-update.component.css']
+  selector: 'app-team-removeplayer',
+  templateUrl: './team-removeplayer.component.html',
+  styleUrls: ['./team-removeplayer.component.css']
 })
-export class TeamUpdateComponent implements OnInit {
+export class TeamRemoveplayerComponent implements OnInit {
   team: Team;
   editForm: FormGroup;
   //private router: Router
@@ -24,20 +24,20 @@ export class TeamUpdateComponent implements OnInit {
   }
   createForm() {
     this.editForm = this.formBuilder.group({
-      // TeamID: new FormControl(this.team.TeamID),
-      TeamName: new FormControl(this.team.TeamName)
-      // Roster: new FormControl(this.team.Roster),
-      // TeamEvents: new FormControl(this.team.TeamEvents),
+      TeamID: new FormControl(this.team.TeamID),
+      TeamName: new FormControl(this.team.TeamName),
+      Roster: new FormControl(this.team.Roster),
+      TeamEvents: new FormControl(this.team.TeamEvents),
     });
   }
   onSubmit() {
     const updatedTeam: Team = {
-        TeamID: this.editForm.value.TeamID,
-        TeamName: this.editForm.value.TeamName,
-        Roster: this.editForm.value.Roster,
-        TeamEvents: this.editForm.value.TeamEvents,
+      TeamID: this.editForm.value.TeamID,
+      TeamName: this.editForm.value.TeamName,
+      Roster: this.editForm.value.Roster,
+      TeamEvents: this.editForm.value.TeamEvents,
     };
-    this.teamService.updateTeam(updatedTeam).subscribe(() =>{
+    this.teamService.removeAthleteFromRoster(updatedTeam, this.team.ProfileID).subscribe(() =>{
       this.router.navigate(['/team']);
     });
   }
