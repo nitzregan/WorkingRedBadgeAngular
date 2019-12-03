@@ -24,8 +24,10 @@ export class TeamCreateComponent implements OnInit {
   onSubmit(team: Team) {
     this.activatedRoute.paramMap.subscribe(params => {
       this._TeamService.createTeam(this.teamCreateForm.value, params.get('ProfileID')).subscribe(data => {
-        this.team=team;
-        this._router.navigate([`/team/${params.get('ProfileID')}`]);
+        console.log(data);
+        //this.team=team;
+        // console.log(team);
+        this._router.navigate([`/profile/get-profile/${localStorage.getItem('UserID')}`]);
       });
     })
   }
