@@ -3,6 +3,7 @@ import { ProfileService } from 'src/app/services/profile.service';
 import { Profile } from 'src/app/models/profile';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
+
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.component.html',
