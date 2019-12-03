@@ -1,0 +1,34 @@
+.profileBio{
+    background-color: aqua;
+    border: 2px, black;
+    width: 30%;
+}
+
+.teamNavButtons{
+    background-color: rebeccapurple;
+    border: 2px, black;
+
+}
+
+.commentsOnProfile{
+    background-color: salmon;
+    border: 2px, black;
+
+}
+
+.getProfileComponentCard{
+    color: grey;
+}
+
+.rightSideOfProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.profileDashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

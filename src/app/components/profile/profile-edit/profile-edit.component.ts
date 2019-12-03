@@ -12,28 +12,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProfileEditComponent implements OnInit {
   profileEditForm: FormGroup;
   profile: Profile;
-  
-  @Input() test:any;
 
   constructor(private form: FormBuilder,
             private profileService: ProfileService,
             private ar: ActivatedRoute,
             private router: Router) { 
     this.ar.paramMap.subscribe(p => {
-      this.profileService.GetProfile(p.get('UserID')).subscribe((singleProfile: Profile) => {
+      this.profileService.GetProfile(localStorage.getItem("UserID")).subscribe((singleProfile: Profile) => {
         this.profile = singleProfile;
         this.createForm();
       });
     });
   }
   ngOnInit() {
-    console.log(this.test)
-    this.ar.paramMap.subscribe(routerdata => {
-      this.profileService.GetProfile(this.test).subscribe((profile: Profile)=>{
-        console.log(profile);
-        this.profile = profile;
-      });
-    });
+    // console.log(this.test)
+    // this.ar.paramMap.subscribe(routerdata => {
+    //   this.profileService.GetProfile(this.test).subscribe((profile: Profile)=>{
+    //     console.log(profile);
+    //     this.profile = profile;
+    //   });
+    // });
   }
   createForm() {
     this.profileEditForm = this.form.group({
@@ -50,6 +48,8 @@ export class ProfileEditComponent implements OnInit {
     console.log(form)
     console.log(this.profileEditForm);
     const updateProfile: Profile = {
+      ProfileID: this.profile.ProfileID,
+      UserID : this.profile.UserID,
       FirstName: this.profileEditForm.value.FirstName,
       LastName: this.profileEditForm.value.LastName,
       Birthday: this.profileEditForm.value.Birthday,
