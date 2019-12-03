@@ -25,7 +25,8 @@ export class AuthService {
         console.log(_userInfo)
         localStorage.setItem('role', _userInfo.Role);
         localStorage.setItem('UserID', _userInfo.UserID);
-        this.router.navigate([`profile/get-profile/${_userInfo.UserID}`]);
+        this.router.navigate([`profile/get-profile/${_userInfo.UserID}`]).then(() => {window.location.reload()});
+        this.isLoggedIn.next(true);
       });
       // console.log(token);
       // this.isLoggedIn.next(true);
@@ -46,7 +47,7 @@ export class AuthService {
     localStorage.clear();
     this.isLoggedIn.next(false);
     this.http.post(`${Api_Url}/api/Account/Logout`, { header: this.setHeaders() });
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(() => {window.location.reload()});
   }
   private setHeaders(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);

@@ -4,24 +4,21 @@ import { Profile } from 'src/app/models/profile';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.component.html',
   styleUrls: ['./profile-edit.component.css']
 })
 export class ProfileEditComponent implements OnInit {
-
   profileEditForm: FormGroup;
   profile: Profile;
-
+  
   @Input() test:any;
 
   constructor(private form: FormBuilder,
             private profileService: ProfileService,
             private ar: ActivatedRoute,
             private router: Router) { 
-    
     this.ar.paramMap.subscribe(p => {
       this.profileService.GetProfile(p.get('UserID')).subscribe((singleProfile: Profile) => {
         this.profile = singleProfile;
@@ -29,7 +26,6 @@ export class ProfileEditComponent implements OnInit {
       });
     });
   }
-
   ngOnInit() {
     console.log(this.test)
     this.ar.paramMap.subscribe(routerdata => {
@@ -39,7 +35,6 @@ export class ProfileEditComponent implements OnInit {
       });
     });
   }
-
   createForm() {
     this.profileEditForm = this.form.group({
       FirstName: new FormControl(this.profile.FirstName),
@@ -69,3 +64,4 @@ export class ProfileEditComponent implements OnInit {
     // console.log(this.profileEditForm.value);
   }
 }
+
