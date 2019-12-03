@@ -3,4 +3,5 @@ export interface UserInfo {
     HasRegistered: boolean;
     Role: string;
     LoginProvider?: any;
+    UserID: any;
 }

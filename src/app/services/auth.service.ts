@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { UserInfo } from '../models/user-info';
-const Api_Url = 'https://localhost:44373';
+const Api_Url = 'https://thepack.azurewebsites.net';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,25 +16,30 @@ export class AuthService {
   register(regUserData: RegisterUser) {
     return this.http.post(`${Api_Url}/api/Account/Register`, regUserData)
   }
-  login(loginInfo){
-    const authString=
+  login(loginInfo) {
+    const authString =
       `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`
-       return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
-         localStorage.setItem('id_token', token.access_token);
-         this.currentUser().subscribe((_userInfo: UserInfo) =>{
-           localStorage.setItem('role',_userInfo.Role);
-         });
-       console.log(token);
-       this.isLoggedIn.next(true);
-       this.router.navigate(['profile/get-profile/:UserID']);
+    return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
+      localStorage.setItem('id_token', token.access_token);
+      this.currentUser().subscribe((_userInfo: UserInfo) => {
+        console.log(_userInfo)
+        localStorage.setItem('role', _userInfo.Role);
+        this.router.navigate([`profile/get-profile/${_userInfo.UserID}`]);
       });
+      // console.log(token);
+      // this.isLoggedIn.next(true);
+      // this.http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeaders() }).subscribe((info: any) => {
+      //   console.log(info);
+      //   this.router.navigate([`profile/get-profile/${info.UserID}`]);
+      // });
+    });
   }
   currentUser(): Observable<Object> {
     if (!localStorage.getItem('id_token')) {
       return new Observable(observer => observer.next(false));
     }
-    const authHeader = new HttpHeaders().set('Authorization', `Bearer${localStorage.getItem('id_token')}`);
-    return this.http.get( `${Api_Url}/api/Account/UserInfo`, {headers: authHeader});
+    const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return this.http.get(`${Api_Url}/api/Account/UserInfo`, { headers: authHeader });
   }
   logout() {
     localStorage.clear();
@@ -43,6 +48,6 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
   private setHeaders(): HttpHeaders {
-    return new HttpHeaders(). set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
 }
