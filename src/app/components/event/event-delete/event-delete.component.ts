@@ -19,7 +19,7 @@ export class EventDeleteComponent implements OnInit {
    }
    onDelete() {
      this.eventService.DeleteEvent(this.event.EventID).subscribe(()=> {
-       this.router.navigate(['event']);
+       this.router.navigate(['/calendar']);
      })
    }
   ngOnInit() {
