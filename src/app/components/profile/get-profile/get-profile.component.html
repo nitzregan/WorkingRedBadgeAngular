@@ -28,14 +28,14 @@
       <span>{{Profile.OtherInfo}}</span>
       <br>
       <span></span>
-      <label *ngIf="register == Coach || register == Parent">Parent: </label>
+      <label *ngIf="register == Athlete">Parent: </label>
       <br>
-      <span *ngIf="register == Coach || register == Parent">{{Profile.ParentUsername}}</span>
+      <span *ngIf="register == Athlete">{{Profile.ParentUsername}}</span>
       <br>
       <span></span>
-      <label *ngIf="register == Coach || register == Parent">Child: </label>
+      <label *ngIf="register == Parent">Child: </label>
       <br>
-      <span *ngIf="register == Coach || register == Parent">{{Profile.AthleteUsername}}</span>
+      <span *ngIf="register == Parent">{{Profile.AthleteUsername}}</span>
       <br>
       <span></span>
       <label *ngIf="register == Coach || register == Parent">Teams: </label>
@@ -45,15 +45,19 @@
       <span></span>
     </div>
   </mat-card-content>
-  <mat-card-actions>
+  <!-- <mat-card-actions>
     <button routerLink = "/profile" mat-button>Edit Profile</button>
-  </mat-card-actions>
+  </mat-card-actions> -->
 </mat-card>
 
 
 <!--Comments Component goes here-->
 <div class="comments">
   <app-comments-index *ngIf="Profile" [test]='Profile.ProfileID'></app-comments-index>
+</div>
+
+<div class="edit">
+  <app-profile-edit *ngIf="Profile" [test]='Profile.ProfileID'></app-profile-edit>
 </div>
 
 <!--Team Buttons-->

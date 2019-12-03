@@ -1,6 +1,6 @@
 <p>profile-edit works!</p>
-<div class="profileEditForm">
-    <form (ngSubmit)="onSubmit()" [formGroup]="profileEditForm">
+<div *ngIf='profile' class="profileEditForm">
+    <form (ngSubmit)="onSubmit(form)" [formGroup]="profileEditForm">
         <mat-form-field>
             <input matInput formControlName="FirstName" placeholder="First Name">
         </mat-form-field>
@@ -15,11 +15,11 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field *ngIf="register == Coach || register == Parent">
             <input matInput formControlName="Email" placeholder="Email">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field *ngIf="register == Coach || register == Parent">
             <input matInput formControlName="PhoneNumber" placeholder="Phone Number">
         </mat-form-field>
         <br>
@@ -32,4 +32,3 @@
         </div>
     </form>
 </div>
-
