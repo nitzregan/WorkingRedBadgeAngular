@@ -1,4 +1,3 @@
-<p>profile-edit works!</p>
 <div *ngIf='profile' class="profileEditForm">
     <form (ngSubmit)="onSubmit(form)" [formGroup]="profileEditForm">
         <mat-form-field>
@@ -15,7 +14,7 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <br>
-        <mat-form-field *ngIf="register == Coach || register == Parent">
+        <mat-form-field>
             <input matInput formControlName="Email" placeholder="Email">
         </mat-form-field>
         <br>

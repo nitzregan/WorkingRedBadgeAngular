@@ -1,71 +1,78 @@
-<mat-card class="getProfileComponentCard" *ngIf="Profile">
-  <mat-card-header>
-    <mat-card-title><span>{{Profile.FirstName}} {{Profile.LastName}}</span></mat-card-title>
-    <!-- <mat-card-subtitle><span>{{Team.TeamName}}</span></mat-card-subtitle> -->
-  </mat-card-header>
-  <mat-card-content>
-    <div>
-      <label>Name: </label>
-      <br>
-      <span>{{Profile.FirstName}} {{Profile.LastName}}</span>
-      <br>
-      <label>Birthday: </label>
-      <br>
-      <span>{{Profile.Birthday}}</span>
-      <br>
-      <label *ngIf="register == Coach || register == Parent">Email: </label>
-      <br>
-      <span *ngIf="register == Coach || register == Parent">{{Profile.UserID}}</span>
-      <br>
-      <span></span>
-      <label *ngIf="register == Coach || register == Parent">Phone Number: </label>
-      <br>
-      <span *ngIf="register == Coach || register == Parent">{{Profile.PhoneNumber}}</span>
-      <br>
-      <span></span>
-      <label>Other: </label>
-      <br>
-      <span>{{Profile.OtherInfo}}</span>
-      <br>
-      <span></span>
-      <label *ngIf="register == Athlete">Parent: </label>
-      <br>
-      <span *ngIf="register == Athlete">{{Profile.ParentUsername}}</span>
-      <br>
-      <span></span>
-      <label *ngIf="register == Parent">Child: </label>
-      <br>
-      <span *ngIf="register == Parent">{{Profile.AthleteUsername}}</span>
-      <br>
-      <span></span>
-      <label *ngIf="register == Coach || register == Parent">Teams: </label>
-      <br>
-      <span *ngIf="register == Coach || register == Parent">{{Profile.MyTeams}}</span>
-      <br>
-      <span></span>
+<div class="profileDashboard">
+  <div class="profileBio">
+    <mat-card class="getProfileComponentCard" *ngIf="Profile">
+      <mat-card-header>
+        <mat-card-title><span>{{Profile.FirstName}} {{Profile.LastName}}</span></mat-card-title>
+        <!-- <mat-card-subtitle><span>{{Team.TeamName}}</span></mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <label>Name: </label>
+          <br>
+          <span>{{Profile.FirstName}} {{Profile.LastName}}</span>
+          <br>
+          <label>Birthday: </label>
+          <br>
+          <span>{{Profile.Birthday}}</span>
+          <br>
+          <label>Email: </label>
+          <br>
+          <span>{{Profile.Email}}</span>
+          <br>
+          <span></span>
+          <label *ngIf="register == Coach || register == Parent">Phone Number: </label>
+          <br>
+          <span *ngIf="register == Coach || register == Parent">{{Profile.PhoneNumber}}</span>
+          <br>
+          <span></span>
+          <label>Other: </label>
+          <br>
+          <span>{{Profile.OtherInfo}}</span>
+          <br>
+          <span></span>
+          <label *ngIf="register == Athlete">Parent: </label>
+          <br>
+          <span *ngIf="register == Athlete">{{Profile.ParentUsername}}</span>
+          <br>
+          <span></span>
+          <label *ngIf="register == Parent">Child: </label>
+          <br>
+          <span *ngIf="register == Parent">{{Profile.AthleteUsername}}</span>
+          <br>
+          <span></span>
+          <label *ngIf="register == Coach || register == Parent">Teams: </label>
+          <br>
+          <span *ngIf="register == Coach || register == Parent">{{Profile.MyTeams}}</span>
+          <br>
+          <span></span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button routerLink="/profile" mat-button>Edit Profile</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="rightSideOfProfile">
+    <!--Team Buttons-->
+    <div class="teamNavButtons">
+      <ul>
+        <li>
+          <a routerLink="/team/deatail/:TeamID"><button mat-raised-button class="nav-btn" color="primary"
+              type="submit">TeamName</button></a>
+        </li>
+      </ul>
     </div>
-  </mat-card-content>
-  <!-- <mat-card-actions>
-    <button routerLink = "/profile" mat-button>Edit Profile</button>
-  </mat-card-actions> -->
-</mat-card>
 
-
-<!--Comments Component goes here-->
-<div class="comments">
-  <app-comments-index *ngIf="Profile" [test]='Profile.ProfileID'></app-comments-index>
+    <!--Comments Component goes here-->
+    <div class="commentsOnProfile">
+      <div class="comments">
+        <app-comments-index *ngIf="Profile" [test]='Profile.ProfileID'></app-comments-index>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="edit">
+<!-- <div class="edit">
   <app-profile-edit *ngIf="Profile" [test]='Profile.ProfileID'></app-profile-edit>
-</div>
-
-<!--Team Buttons-->
-<div>
-  <ul>
-    <li>
-      <a routerLink="/team/deatail/:TeamID"><button mat-raised-button class="nav-btn" color="primary"
-          type="submit">TeamName</button></a>
-    </li>
-  </ul>
-</div>
+</div> -->
