@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Event } from '../models/Event';
 import { Observable } from 'rxjs';
-const Api_Url= 'https://localhost:44373'
+const Api_Url= 'https://thepack.azurewebsites.net'
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +23,7 @@ export class EventService {
   DeleteEvent(EventID){
     return this.http.delete(`${Api_Url}/api/Event?EventID=${EventID}`, {headers: this.getHeaders() });
   }
+  
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }

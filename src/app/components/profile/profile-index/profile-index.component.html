@@ -1,14 +1,13 @@
-<!-- <app-header></app-header>
 <p>profile-index works!</p>
-<mat-accordion>
+<mat-accordion *ngFor="let item of Profile">
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <span>{{Profile.FirstName}} {{Profile.LastName}}</span>
+                <span>{{item.FirstName}} {{item.LastName}}</span>
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div>
             <app-get-profile></app-get-profile>
         </div>
     </mat-expansion-panel>
-</mat-accordion> -->
+</mat-accordion>

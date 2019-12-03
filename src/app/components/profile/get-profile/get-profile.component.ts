@@ -13,18 +13,21 @@ import { RegisterUser } from 'src/app/models/register-user';
 export class GetProfileComponent implements OnInit {
 
   Profile;
-  register: RegisterUser;
+  register: any;
   columnName = [
     'ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments'];
   dataSource: MatTableDataSource<Profile>;
   
   constructor(private profileService: ProfileService, private _activatedRoute: ActivatedRoute) {
+    this.register = localStorage.getItem('role');
+    console.log(localStorage.getItem('role'));
     this._activatedRoute.paramMap.subscribe(routerData => {
       console.log(routerData.get('UserID'));
       this.profileService.GetProfile(routerData.get('UserID')).subscribe((profile: Profile[]) => {
+        console.log(profile);
         this.dataSource = new MatTableDataSource<Profile>(profile);
-        console.log(profile, this.register.role);
         this.Profile = profile;
+        //console.log(profile, this.register.role);
       });
     });
   }

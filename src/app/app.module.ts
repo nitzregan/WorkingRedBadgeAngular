@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
@@ -87,7 +88,8 @@ const routes = [
   { path: 'event/detail/:EventID/:TeamID', component: EventDetailComponent },
   { path: 'event/edit', component: EventEditComponent },
   { path: 'event/delete/:EventID', component: EventCreateComponent },
-  { path: 'profile/index/:TeamID', component: ProfileIndexComponent },
+  
+  { path: 'profile/index', component: ProfileIndexComponent },
   { path: 'profile', component: ProfileEditComponent },
   { path: 'profile/get/:TeamID', component: GetProfileByTeamComponent },
   { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
@@ -150,7 +152,8 @@ const routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     AppRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MatExpansionModule
   ],
   providers: [AuthService, EventService, TeamMessagingService, ProfileService, TeamService],
   bootstrap: [AppComponent]
