@@ -10,9 +10,9 @@ export interface Profile {
     Email: string;
     PhoneNumber: string;
     OtherInfo: string;
-    AthleteUsername: string;
-    ParentUsername: string;
-    MyTeams: Array<Team>;
-    Comments: Array<Comments>;
+    AthleteUsername?: string;
+    ParentUsername?: string;
+    MyTeams?: Array<Team>;
+    Comments?: Array<Comments>;
     CreatedUtc?: Date;
 }

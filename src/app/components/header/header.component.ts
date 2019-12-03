@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn: boolean;
+
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.checkifloggedin();
+  }
+
+  checkifloggedin() {
+    if (localStorage.getItem("id_token"))  {
+      this.isLoggedIn = true;
+    }
+    else this.isLoggedIn = false;
+    
+  }
+  onSubmit() {
+    this.authService.logout();
+    
   }
 
 }

@@ -21,7 +21,8 @@ export class CommentsDeleteComponent implements OnInit {
   }
   onDelete() {
     this.commentsService.deleteComment(this.comments.CommentID).subscribe(() => {
-      this.router.navigate([`/comments/${this.comments.ProfileID}`]);
+      this.router.navigate([`/profile/get-profile/${localStorage.getItem("UserID")}`]);
+
     });
   }
 }
