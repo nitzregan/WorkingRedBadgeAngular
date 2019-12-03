@@ -27,7 +27,7 @@ export class CommentsCreateComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this._CommentsService.createComment(this.commentsCreateForm.value, params.get('ProfileID')).subscribe(data => {
         this.comment=comment;
-        this.router.navigate([`/comments/${params.get('ProfileID')}`]  );
+        // this.router.navigate([`/comments/${comment.UserID}`]  );
       });
       })
   }
