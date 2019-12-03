@@ -24,6 +24,7 @@ export class AuthService {
       this.currentUser().subscribe((_userInfo: UserInfo) => {
         console.log(_userInfo)
         localStorage.setItem('role', _userInfo.Role);
+        localStorage.setItem('UserID', _userInfo.UserID);
         this.router.navigate([`profile/get-profile/${_userInfo.UserID}`]);
       });
       // console.log(token);
