@@ -24,6 +24,7 @@ export class GetProfileComponent implements OnInit {
       this.profileService.GetProfile(routerData.get('UserID')).subscribe((profile: Profile[]) => {
         this.dataSource = new MatTableDataSource<Profile>(profile);
         console.log(profile, this.register.role);
+        this.register.role = localStorage.getItem('role');
         this.Profile = profile;
       });
     });
