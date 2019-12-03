@@ -88,9 +88,10 @@ const routes = [
   { path: 'event/detail/:EventID/:TeamID', component: EventDetailComponent },
   { path: 'event/edit', component: EventEditComponent },
   { path: 'event/delete/:EventID', component: EventCreateComponent },
+  
   { path: 'profile/index', component: ProfileIndexComponent },
   { path: 'profile', component: ProfileEditComponent },
-  { path: 'profile/:TeamID', component: GetProfileByTeamComponent },
+  { path: 'profile/get/:TeamID', component: GetProfileByTeamComponent },
   { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
   // { path: '**', component: RegistrationComponent },
   { path: '**', component: LoginComponent }
