@@ -1,0 +1,21 @@
+.mat-card {
+    width: 30%;
+}
+
+.eventEditDiv
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.eventEditForm{
+    display: flex;
+    justify-content: center;
+}
+
+.eventEditButton {
+    display: flex;
+    justify-content: center;
+}

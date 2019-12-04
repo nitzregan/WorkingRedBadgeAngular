@@ -1,4 +1,4 @@
-.nav-btn{
+/* .nav-btn{
     background-color: #F55D3E;
 }
 .login{
@@ -7,4 +7,27 @@
     margin-left: -50px;
     display: inline-block;
     font-size: larger;
+} */
+
+.mat-card {
+    width: 30%;
+}
+
+.loginDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+
+.loginButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
 }

@@ -1,4 +1,4 @@
-.nav-btn{
+/* .nav-btn{
     background-color: #F55D3E;
 }
 .Registration{
@@ -7,4 +7,27 @@
     margin-left: -50px;
     display: inline-block;
     font-size: larger;
+} */
+
+.mat-card {
+    width: 30%;
+}
+
+.registrationDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.registrationForm{
+    display: flex;
+    justify-content: center;
+}
+
+.registrationButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
 }

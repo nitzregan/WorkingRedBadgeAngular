@@ -1,21 +1,30 @@
-<h1>Login</h1>
-<hr>
-<div class="login">
-        <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-                <div>
+<div class="loginDiv">
+    <mat-card>
+        <mat-card-content>
+            <h2>Login</h2>
+            <br>
+            <div class="login">
+                <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
                     <div>
                         <mat-form-field>
                             <input matInput placeholder="Email" formControlName="email" type="email" required />
                         </mat-form-field>
-                    </div>
-                    <div>
+                        <br>
                         <mat-form-field>
-                            <input matInput placeholder="Password" formControlName="password" type="password" required />
+                            <input matInput placeholder="Password" formControlName="password" type="password"
+                                required />
                         </mat-form-field>
                     </div>
-                </div>
-                <button mat-raised-button class ="nav-btn" color="primary" type="submit">Login</button>
-            </form>
-            <br />
-            <a routerLink="/register">Register as a new user</a>
+                    <div class="loginButton">
+                        <button mat-button type="submit">Login</button>
+                        <br>
+                        <a routerLink="/register">Register as a New User</a>
+                        <!-- <button mat-button class="nav-btn" routerLink="/register">Register</button> -->
+                    </div>
+                </form>
+                <!-- <br />
+                <a routerLink="/register">Register as a new user</a> -->
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
