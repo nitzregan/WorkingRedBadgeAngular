@@ -2,12 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Profile } from 'src/app/models/Profile';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import {  MatTableDataSource } from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 import { Team } from 'src/app/models/Team';
-import { ActivatedRoute, Router } from '@angular/router';
-
-
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-get-profile-by-team',
   templateUrl: './get-profile-by-team.component.html',
@@ -15,24 +12,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GetProfileByTeamComponent implements OnInit {
   team: Team;
-  Profiles;
+  Profile;
+  register: any;
   columnName = [
     'ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments'];
-    dataSource: MatTableDataSource<Profile>;
-
-  constructor(private profileService: ProfileService, private activatedRoute: ActivatedRoute, private router: Router) { }
-
+  dataSource: MatTableDataSource<Profile>;
+  constructor(private profileService: ProfileService, private _activatedRoute: ActivatedRoute) { }
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe( data => {
-
-      this.profileService.GetAllProfilesByTeam(data.get('TeamID')).subscribe((profile: Profile[])=>{
+    this._activatedRoute.paramMap.subscribe(routerData => {
+      this.profileService.GetAllProfilesByTeam(routerData.get('TeamID')).subscribe((profile: Profile[]) => {
+        this.register = localStorage.getItem('role');
         this.dataSource = new MatTableDataSource<Profile>(profile);
         console.log(profile);
-        this.Profiles=profile;
-      })
+        this.Profile = profile;
+      });
     });
-  }
-  onSubmit(){
-    
   }
 }
