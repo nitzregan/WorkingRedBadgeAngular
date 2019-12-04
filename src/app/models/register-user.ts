@@ -3,4 +3,5 @@ export interface RegisterUser {
     password: string;
     confirmPassword: string;
     role: string; //These are user Roles. Are these actually strings??
+    athleteUsername?: string;
 }
