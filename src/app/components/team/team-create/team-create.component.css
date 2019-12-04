@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.createTeamDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.TeamCreate{
+    display: flex;
+    justify-content: center;
+}
+
+.createTeamButton {
+    display: flex;
+    justify-content: center;
+}
