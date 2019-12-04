@@ -9,10 +9,10 @@ const Api_Url = 'https://localhost:44373'
 export class TeamMessagingService {
   constructor(private http: HttpClient) { }
   getTeamMessageByID(MessageID) {
-    return this.http.get(`${Api_Url}/api/TeamMessaging?MessageID=${MessageID}`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/TeamMessaging?messageId=${MessageID}`, { headers: this.getHeaders() });
   }
-  getTeamMessages() {
-    return this.http.get(`${Api_Url}/api/TeamMessaging`, { headers: this.getHeaders() });
+  getTeamMessages(TeamID) {
+    return this.http.get(`${Api_Url}/api/TeamMessaging?TeamID=${TeamID}`, { headers: this.getHeaders() });
   }
   createTeamMessage(teamMessage: TeamMessaging, TeamID) {
     return this.http.post(`${Api_Url}/api/TeamMessaging?TeamID=${TeamID}`, teamMessage, { headers: this.getHeaders() });

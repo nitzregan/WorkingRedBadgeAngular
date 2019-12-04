@@ -17,7 +17,7 @@ export class CommentsIndexComponent implements OnInit {
     console.log(this.test)
     this._activatedRoute.paramMap.subscribe(routerData => {
       this.commentsService.getCommentsByProfile(this.test).subscribe((comments: Comments[])=>{
-        console.log(comments);
+        console.log(routerData);
         this.Comments=comments;
       });
       });
