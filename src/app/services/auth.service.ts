@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { UserInfo } from '../models/user-info';
-const Api_Url = 'https://thepack.azurewebsites.net';
+const Api_Url = 'https://localhost:44373';
 @Injectable({
   providedIn: 'root'
 })
