@@ -13,7 +13,7 @@
 
 .getProfileComponentCard{
     color: grey;
-
+    /* background-color: #F6F6F7; */
 }
 
 .rightSideOfProfile{
@@ -33,5 +33,5 @@
 .mat-button{
     margin-right: .5em;
     background-color:#F55D3E;
-    color: #F6F6F7;
+    color: whitesmoke;
 }

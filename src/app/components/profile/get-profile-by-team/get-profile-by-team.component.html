@@ -1,8 +1,9 @@
-<mat-accordion>
-    <mat-expansion-panel>
+<div class="rosterExpansion" *ngFor="let item of Profile">
+    <mat-accordion>
+        <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <span>{{Profile.FirstName}} {{Profile.LastName}}</span>
+                <span>{{item.FirstName}} {{item.LastName}}</span>
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div>
@@ -13,3 +14,4 @@
         </div>
     </mat-expansion-panel>
 </mat-accordion>
+</div>
