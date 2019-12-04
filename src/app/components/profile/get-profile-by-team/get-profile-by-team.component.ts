@@ -4,6 +4,8 @@ import { Profile } from 'src/app/models/Profile';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import {  MatTableDataSource } from '@angular/material';
 import { Team } from 'src/app/models/Team';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Component({
@@ -13,18 +15,24 @@ import { Team } from 'src/app/models/Team';
 })
 export class GetProfileByTeamComponent implements OnInit {
   team: Team;
-  Profile;
+  Profiles;
   columnName = [
     'ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments'];
     dataSource: MatTableDataSource<Profile>;
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.profileService.GetAllProfilesByTeam(this.team.TeamID).subscribe((profile: Profile[])=>{
-      this.dataSource = new MatTableDataSource<Profile>(profile);
-      console.log(profile);
-      this.Profile=profile;
+    this.activatedRoute.paramMap.subscribe( data => {
+
+      this.profileService.GetAllProfilesByTeam(data.get('TeamID')).subscribe((profile: Profile[])=>{
+        this.dataSource = new MatTableDataSource<Profile>(profile);
+        console.log(profile);
+        this.Profiles=profile;
+      })
     });
+  }
+  onSubmit(){
+    
   }
 }

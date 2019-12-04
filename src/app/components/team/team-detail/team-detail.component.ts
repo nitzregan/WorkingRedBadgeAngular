@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from 'src/app/services/team.service';
 import { Team } from 'src/app/models/team';
 @Component({
@@ -9,7 +9,7 @@ import { Team } from 'src/app/models/team';
 })
 export class TeamDetailComponent implements OnInit {
   team: Team;
-  constructor(private activatedRoute: ActivatedRoute, private teamService: TeamService) { }
+  constructor(private activatedRoute: ActivatedRoute, private teamService: TeamService, private router: Router) { }
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(routeData => {
       this.teamService.getTeamByID(routeData.get('TeamID')).subscribe((team: Team)=> {
@@ -17,4 +17,10 @@ export class TeamDetailComponent implements OnInit {
       });
     });
   }
+  onSubmit(){
+    this.activatedRoute.paramMap.subscribe(routeData => {
+      this.router.navigate([`/profile/roster/${routeData.get('TeamID')}`])
+    
+  })
+}
 }
