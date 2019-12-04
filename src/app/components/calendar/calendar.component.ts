@@ -14,7 +14,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class CalendarComponent implements OnInit {
   calendarPlugins = [dayGridPlugin, interactionPlugin]; // important!
   testEvents: any = [
-    { title: 'Test 1', start: '2019-12-02T13:00:00', end: '2019-12-03T14:00:00', id:27 },
+    { title: 'Test 1', start: '2019-12-02T13:00:00', end: '2019-12-03T14:00:00', id: 27, groupId: 24 },
     { title: 'Test 2', date: '2019-12-04', id: 8, groupId: 30 }
   ]
   calendarEvents: any = []
@@ -35,7 +35,7 @@ export class CalendarComponent implements OnInit {
     console.log(e.event.groupId);
     this.router.navigate([`/event/detail/${e.event.groupId}/${e.event.id}`]);
   }
-  
+
   ngOnInit() {
     // this.eventService.getEvents(1).subscribe((events: Event[]) => {
     //   this.dataSource = new MatTableDataSource<Event>(events);

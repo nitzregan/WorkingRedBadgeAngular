@@ -9,4 +9,23 @@ body, html{
     margin: auto auto;
     padding: 0;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: #F6F6F7;
+    color: #222428;
+}
+
+.fc-unthemed td.fc-today {
+    background: #F55D3E;
+}
+
+.fc-event, .fc-event-dot {
+    background-color: #274C5E;
+}
+
+.fc-event {
+    position: relative;
+    display: block;
+    font-size: .85em;
+    line-height: 1.4;
+    border-radius: 3px;
+    border: 1px solid #274C5E;
 }
