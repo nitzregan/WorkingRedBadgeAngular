@@ -18,7 +18,8 @@ export class RegistrationComponent implements OnInit {
       email: new FormControl,
       password: new FormControl,
       confirmPassword: new FormControl,
-      role: new FormControl
+      role: new FormControl,
+      athleteUsername: new FormControl
     });
   }
   onSubmit() {

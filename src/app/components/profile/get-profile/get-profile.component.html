@@ -39,7 +39,6 @@
           <br>
           <span *ngIf="register == Parent">{{Profile.AthleteUsername}}</span>
           <br>
-          <span></span>
           <label *ngIf="register == Coach || register == Parent">Teams: </label>
           <br>
           <span *ngIf="register == Coach || register == Parent">{{Profile.MyTeams}}</span>
@@ -58,7 +57,7 @@
     <div class="teamNavButtons">
       <ul>
         <li>
-          <a routerLink="/team/deatail/:TeamID"><button mat-raised-button class="nav-btn" color="primary"
+          <a routerLink="/team/detail/:TeamID"><button mat-raised-button class="nav-btn" color="primary"
               type="submit">TeamName</button></a>
         </li>
       </ul>
