@@ -1,3 +1,11 @@
+/* .nav-btn{
+    background-color: #F55D3E;
+    margin-top: .5em;
+}
+.calendar{
+    background-color: #F55D3E;
+} */
+
 body{
     background-color: #A7A2A9;
     color: #222428;
@@ -8,6 +16,14 @@ body{
     margin-top: .5em;
 }
 
-.fc-unthemed td.fc-today{
+/* .fc-unthemed td.fc-today{
     background-color: #F55D3E;
+} */
+
+.fc-unthemed td.fc-today {
+    background: #F55D3E;
 }
+
+.calendar{
+    background-color:rgb(215, 215, 219);
+} 

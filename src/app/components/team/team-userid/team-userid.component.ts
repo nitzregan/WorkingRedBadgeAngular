@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TeamService } from 'src/app/services/team.service';
 import { Team } from 'src/app/models/team';
 @Component({
@@ -9,7 +9,7 @@ import { Team } from 'src/app/models/team';
 })
 export class TeamUseridComponent implements OnInit {
   team: Team;
-  constructor(private activatedRoute: ActivatedRoute, private teamService: TeamService) { }
+  constructor(private activatedRoute: ActivatedRoute, private teamService: TeamService, private router: Router) { }
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(routeData => {
       this.teamService.getTeamsByUserID(routeData.get('UserID')).subscribe((team: Team)=> {

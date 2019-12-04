@@ -1,1 +1,3 @@
-<p>team-userid works!</p>
+<div *ngFor="let item of team">
+    <button class='nav-btn' color="primary"  routerLink="/team/detail/{{item.TeamID}}">{{item.TeamName}}</button>
+</div>
