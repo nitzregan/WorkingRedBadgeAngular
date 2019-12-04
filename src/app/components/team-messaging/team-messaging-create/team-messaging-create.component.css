@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.teamMessageCreateDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.teamMessageCreateForm{
+    display: flex;
+    justify-content: center;
+}
+
+.teamMessageCreateButton {
+    display: flex;
+    justify-content: center;
+}

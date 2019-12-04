@@ -1,3 +1,5 @@
-<div class="deck teamNavButtons" *ngFor="let item of team">
-    <button class="nav-btn" mat-button routerLink="/team/detail/{{item.TeamID}}">{{item.TeamName}}</button>
+<div class="teamNavButtons">
+    <div class="deck" *ngFor="let item of team">
+        <button class="nav-btn" mat-button routerLink="/team/detail/{{item.TeamID}}">{{item.TeamName}}</button>
+    </div>
 </div>

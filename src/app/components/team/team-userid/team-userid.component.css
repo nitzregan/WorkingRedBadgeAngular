@@ -1,0 +1,12 @@
+.teamNavButtons{
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: auto;
+    margin-right: 10px; */
+}
+
+/* .deck{
+    display: flex;
+    margin: auto;
+    margin-right: 10px;
+} */

@@ -1,17 +1,24 @@
-<h1>Create a Message</h1>
-<hr />
-<form (ngSubmit)="onSubmit()" [formGroup]="teamMessagingCreateForm">
-    <div>
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Title" formControlName="Title" type="Title" required />
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Content" formControlName="Content" type="Content" required />
-            </mat-form-field>
-        </div>
-    </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Team Message</button>
-</form>
+<div class="teamMessageCreateDiv">
+    <mat-card>
+        <mat-card-content>
+            <h1>Create a Message</h1>
+            <br>
+            <div class="teamMessageCreateForm">
+                <form (ngSubmit)="onSubmit()" [formGroup]="teamMessagingCreateForm">
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Title" formControlName="Title" type="Title" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="Content" formControlName="Content" type="Content" required />
+                        </mat-form-field>
+                    </div>
+                    <div class="teamMessageCreateButton">
+                        <button mat-button type="submit">Create</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
