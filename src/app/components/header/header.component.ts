@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    
     this.checkifloggedin();
   }
 
@@ -29,5 +28,10 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     
   }
+
+  onClick() {
+    this.router.navigate([`/profile/get-profile/${localStorage.getItem("UserID")}`]);
+  }
+
 
 }

@@ -93,6 +93,7 @@ const routes = [
   { path: 'profile', component: ProfileEditComponent },
   { path: 'profile/get/:TeamID', component: GetProfileByTeamComponent },
   { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
+  { path: 'profile/roster/:TeamID', component: GetProfileByTeamComponent },
   // { path: '**', component: RegistrationComponent },
   { path: '**', component: LoginComponent }
 
