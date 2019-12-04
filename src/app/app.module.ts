@@ -67,7 +67,7 @@ const routes = [
   { path: 'teammessages/:TeamID', component: TeamMessagingIndexComponent },
   { path: 'teammessages/create/:TeamID', component: TeamMessagingCreateComponent },
   { path: 'teammessages/detail/:MessageID', component: TeamMessagingDetailComponent },
-  { path: 'teammessages/update', component: TeamMessagingUpdateComponent },
+  { path: 'teammessages/update/:MessageID', component: TeamMessagingUpdateComponent },
   { path: 'teammessages/delete/:MessageID', component: TeamMessagingDeleteComponent },
   { path: 'team', component: TeamIndexComponent },
   { path: 'team/create/:ProfileID', component: TeamCreateComponent },
