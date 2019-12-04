@@ -15,7 +15,8 @@ export class TeamMessagingUpdateComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private teamMessagingService: TeamMessagingService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
       this.teamMessagingService.getTeamMessageByID(params.get('MessageID')).subscribe((teamMessaging: TeamMessaging) => {
-        this.teamMessaging = this.teamMessaging;
+        this.teamMessaging = teamMessaging;
+        console.log(teamMessaging)
         this.createForm();
       });
     });

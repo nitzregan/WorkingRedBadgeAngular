@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.teamMessageUpdateDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.teamMessageUpdateForm{
+    display: flex;
+    justify-content: center;
+}
+
+.teamMessageUpdateButton {
+    display: flex;
+    justify-content: center;
+}

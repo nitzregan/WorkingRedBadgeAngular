@@ -1,13 +1,19 @@
 <p>profile-index works!</p>
-<mat-accordion *ngFor="let item of Profile">
+<!-- <mat-accordion *ngFor="let Profile of Profiles">
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <span>{{item.FirstName}} {{item.LastName}}</span>
+                <span>{{Profile.FirstName}} {{Profile.LastName}}</span>
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div>
             <app-get-profile></app-get-profile>
         </div>
     </mat-expansion-panel>
-</mat-accordion>
+</mat-accordion> -->
+
+<div *ngFor="let Profile of Profiles">
+    <ul>
+        <li>{{Profile.FirstName}} {{Profile.LastName}}<button mat-button type="onSubmit">Add Player</button></li>
+    </ul>
+</div>

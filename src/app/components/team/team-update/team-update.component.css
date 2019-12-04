@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.updateTeamDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.TeamUpdate{
+    display: flex;
+    justify-content: center;
+}
+
+.updateTeamButton {
+    display: flex;
+    justify-content: center;
+}
