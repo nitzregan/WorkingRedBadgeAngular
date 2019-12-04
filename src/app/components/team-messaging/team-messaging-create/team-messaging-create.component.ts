@@ -21,8 +21,11 @@ export class TeamMessagingCreateComponent implements OnInit {
     })
   }
   onSubmit() {
-    this._TeamMessagingService.createTeamMessage(this.teamMessagingCreateForm.value).subscribe(data => {
-      this._router.navigate(['/teammassaging']);
-    })
+    this.activatedRoute.paramMap.subscribe(params => {
+      this._TeamMessagingService.createTeamMessage(this.teamMessagingCreateForm.value, params.get('TeamID')).subscribe(data => {
+        this._router.navigate(['/teammassaging']);
+
+    });
+    });
   }
 }

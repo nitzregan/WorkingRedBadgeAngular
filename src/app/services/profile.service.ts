@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Profile } from '../models/Profile';
 
-const Api_Url = 'https://thepack.azurewebsites.net'
+const Api_Url = 'https://localhost:44373'
 
 @Injectable({
   providedIn: 'root'

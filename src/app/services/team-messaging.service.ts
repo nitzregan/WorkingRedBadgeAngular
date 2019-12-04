@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TeamMessaging } from '../models/team-messaging';
 import { Observable } from 'rxjs';
-const Api_Url = 'https://thepack.azurewebsites.net'
+const Api_Url = 'https://localhost:44373'
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +14,8 @@ export class TeamMessagingService {
   getTeamMessages() {
     return this.http.get(`${Api_Url}/api/TeamMessaging`, { headers: this.getHeaders() });
   }
-  createTeamMessage(teamMessage: TeamMessaging) {
-    return this.http.post(`${Api_Url}/api/TeamMessaging`, teamMessage, { headers: this.getHeaders() });
+  createTeamMessage(teamMessage: TeamMessaging, TeamID) {
+    return this.http.post(`${Api_Url}/api/TeamMessaging?TeamID=${TeamID}`, teamMessage, { headers: this.getHeaders() });
   }
   updateTeamMessage(teamMessage: TeamMessaging) {
     return this.http.put(`${Api_Url}/api/TeamMessaging`, teamMessage, { headers: this.getHeaders() });
