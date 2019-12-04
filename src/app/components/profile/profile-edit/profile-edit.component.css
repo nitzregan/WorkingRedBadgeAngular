@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.editProfileDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.profileEditForm{
+    display: flex;
+    justify-content: center;
+}
+
+.saveChangesButton {
+    display: flex;
+    justify-content: center;
+}

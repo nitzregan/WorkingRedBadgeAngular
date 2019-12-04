@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.commentCreateDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.commentCreateForm{
+    display: flex;
+    justify-content: center;
+}
+
+.commentCreateButton {
+    display: flex;
+    justify-content: center;
+}

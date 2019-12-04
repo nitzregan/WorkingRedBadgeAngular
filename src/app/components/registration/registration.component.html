@@ -1,43 +1,46 @@
-<h1>Join The Pack</h1>
-<h2>Register</h2>
-<hr />
-<body>
-    <div class="Registration">
-        <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
-            <div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="Email" formControlName="email" type="email" required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="Password" formControlName="password" type="password" required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password"
-                            required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <mat-label>Select Role</mat-label>
-                        <select matNativeControl formControlName="role" type="role" required>
-                            <option value="Coach">Coach</option>
-                            <option value="Athlete">Athlete</option>
-                            <option value="Parent">Parent</option>
-                        </select>
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field *ngIf="role == Parent">
-                        <input matInput placeholder="Athlete Username" formControlName="athleteUsername" type="input"/>
-                    </mat-form-field>
-                </div>
+<div class="registrationDiv">
+    <mat-card>
+        <mat-card-content>
+            <h2>Join The Pack</h2>
+            <br>
+            <div class="registrationForm">
+                <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Email" formControlName="email" type="email" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" formControlName="password" type="password"
+                                required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="Confirm Password" formControlName="confirmPassword"
+                                type="password" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Select Role</mat-label>
+                            <select matNativeControl formControlName="role" type="role" required>
+                                <option value="Coach">Coach</option>
+                                <option value="Athlete">Athlete</option>
+                                <option value="Parent">Parent</option>
+                            </select>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field *ngIf="role == Parent">
+                            <input matInput placeholder="Athlete Username" formControlName="athleteUsername"
+                                type="input" />
+                        </mat-form-field>
+                    </div>
+                    <div class="registrationButton">
+                        <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
+                        <br>
+                        <a routerLink="/login">Already have an account? Login!</a>
+                    </div>
+                </form>
             </div>
-            <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
-        </form>
-    </div>
-</body>
+        </mat-card-content>
+    </mat-card>
+</div>

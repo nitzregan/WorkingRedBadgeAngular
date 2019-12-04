@@ -1,1 +1,44 @@
-<p>event-edit works!</p>
+<div class="eventEditDiv">
+        <mat-card>
+            <mat-card-content>
+                <h2>Event Edit</h2>
+                <br>
+                <div class="EventEdit eventEditForm">
+                    <form (ngSubmit)="onSubmit()" [formGroup]="eventForm">
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Title" formControlName="Title" type="Title" required />
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <input matInput placeholder="Content" formControlName="Content" type="Content" required />
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <input matInput placeholder="(24hour clock) yyyy-mm-ddThh:mm:ss" formControlName="Start"
+                                    type="Start" required />
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <input matInput placeholder="(24hour clock) yyyy-mm-ddThh:mm:ss" formControlName="End"
+                                    type="End" required />
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <mat-label>All Day Event</mat-label>
+                                <select matNativeControl formControlName="AllDayEvent" type="AllDayEvent" required>
+                                    <option value="True">Yes</option>
+                                    <option value="False">No</option>
+                                </select>
+                            </mat-form-field>
+                        </div>
+                        <div class="eventEditButton">
+                            <button mat-button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+    <!-- <button mat-raised-button class="nav-btn" color="primary" type="submit">Submit</button> -->

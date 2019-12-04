@@ -1,41 +1,44 @@
-<h2>Event Create</h2>
-<hr />
-<body>
-    <div class="EventCreate">
-        <form (ngSubmit)="onSubmit()" [formGroup]="eventForm">
-            <div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="Title" formControlName="Title" type="Title" required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="Content" formControlName="Content" type="Content" required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="(24hour clock) yyyy-mm-ddThh:mm:ss" formControlName="Start" type="Start"
-                            required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <input matInput placeholder="(24hour clock) yyyy-mm-ddThh:mm:ss" formControlName="End" type="End" required />
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <mat-label>All Day Event</mat-label>
-                        <select matNativeControl formControlName="AllDayEvent" type="AllDayEvent" required>
-                            <option value="True">Yes</option>
-                            <option value="False">No</option>
-                        </select>
-                    </mat-form-field>
-                </div>
+<div class="eventCreateDiv">
+    <mat-card>
+        <mat-card-content>
+            <h2>Event Create</h2>
+            <br>
+            <div class="EventCreate eventCreateForm">
+                <form (ngSubmit)="onSubmit()" [formGroup]="eventForm">
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Title" formControlName="Title" type="Title" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="Content" formControlName="Content" type="Content" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="(24hour clock) yyyy-mm-ddThh:mm:ss" formControlName="Start"
+                                type="Start" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="(24hour clock) yyyy-mm-ddThh:mm:ss" formControlName="End"
+                                type="End" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>All Day Event</mat-label>
+                            <select matNativeControl formControlName="AllDayEvent" type="AllDayEvent" required>
+                                <option value="True">Yes</option>
+                                <option value="False">No</option>
+                            </select>
+                        </mat-form-field>
+                    </div>
+                    <div class="eventCreateButton">
+                        <button mat-button type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-            <button mat-raised-button class="nav-btn" color="primary" type="submit">Submit</button>
-        </form>
-    </div>
-</body>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- <button mat-raised-button class="nav-btn" color="primary" type="submit">Submit</button> -->
