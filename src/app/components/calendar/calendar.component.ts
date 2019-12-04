@@ -60,22 +60,9 @@ export class CalendarComponent implements OnInit {
     });
     console.log(this.calendarEvents)
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  onSubmit(){
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.router.navigate([`/event/create/${params.get('TeamID')}`])
+    })
+  }
 }
