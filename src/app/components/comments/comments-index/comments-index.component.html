@@ -4,7 +4,7 @@
         <h3>{{Comment.Name}}</h3>
         <h4>{{Comment.Title}}</h4>
         <p>{{Comment.Content}}</p>
-        <span class="time-right">{{Comment.DateSent}}</span>
+        <span class="time-right">{{Comment.DateSent | date:"short"}}</span>
         <i class="material-icons" routerLink="/comments/delete/{{Comment.CommentID}}">delete</i>
     </div>
 </div>

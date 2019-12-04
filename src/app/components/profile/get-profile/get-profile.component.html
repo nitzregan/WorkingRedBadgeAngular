@@ -17,40 +17,40 @@
           <span>{{Profile.Birthday | date:"shortDate"}}</span>
           <br>
           <br>
-          <label>Email: </label>
-          <br>
-          <span>{{Profile.Email}}</span>
-          <br>
-          <br>
-          <label>Phone Number: </label>
-          <br>
-          <span>{{Profile.PhoneNumber}}</span>
-          <br>
-          <br>
+          <label *ngIf="register != 'Athlete'">Email: </label>
+          <br *ngIf="register != 'Athlete'">
+          <span *ngIf="register != 'Athlete'">{{Profile.Email}}</span>
+          <br *ngIf="register != 'Athlete'">
+          <br *ngIf="register != 'Athlete'">
+          <label *ngIf="register != 'Athlete'">Phone Number: </label>
+          <br *ngIf="register != 'Athlete'">
+          <span *ngIf="register != 'Athlete'">{{Profile.PhoneNumber}}</span>
+          <br *ngIf="register != 'Athlete'">
+          <br *ngIf="register != 'Athlete'">
           <label>Other: </label>
           <br>
           <span>{{Profile.OtherInfo}}</span>
           <br>
           <br>
-          <label *ngIf="register == Athlete">Parent: </label>
-          <br>
-          <span *ngIf="register == Athlete">{{Profile.ParentUsername}}</span>
-          <br>
-          <br>
-          <label *ngIf="register == Parent">Child: </label>
-          <br>
-          <span *ngIf="register == Parent">{{Profile.AthleteUsername}}</span>
-          <br>
-          <br>
-          <label *ngIf="register == Coach || register == Parent">Teams: </label>
-          <br>
-          <span *ngIf="register == Coach || register == Parent">{{Profile.MyTeams}}</span>
-          <br>
+          <label *ngIf="register == 'Athlete'">Parent: </label>
+          <br *ngIf="register == 'Athlete'">
+          <span *ngIf="register == 'Athlete'">{{Profile.ParentUsername}}</span>
+          <br *ngIf="register == 'Athlete'">
+          <br *ngIf="register == 'Athlete'">
+          <label *ngIf="register == 'Parent'">Child: </label>
+          <br *ngIf="register == 'Parent'">
+          <span *ngIf="register == 'Parent'">{{Profile.AthleteUsername}}</span>
+          <br *ngIf="register == 'Parent'">
+          <br *ngIf="register == 'Parent'">
+          <label *ngIf="register == 'Coach' || register == 'Athlete'">Teams: </label>
+          <br *ngIf="register == 'Coach' || register == 'Athlete'">
+          <span *ngIf="register == 'Coach' || register == 'Athlete'">{{Profile.MyTeams}}</span>
+          <br *ngIf="register == 'Coach' || register == 'Athlete'">
         </div>
       </mat-card-content>
-        <mat-card-actions>
-          <button routerLink="/profile" mat-button>Edit Profile</button>
-        </mat-card-actions>
+      <mat-card-actions>
+        <button routerLink="/profile" mat-button>Edit Profile</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 
@@ -65,7 +65,7 @@
 
     <!--Comments Component goes here-->
     <div class="commentsOnProfile">
-      <mat-card>
+      <mat-card class="commentScroll">
         <mat-card-content>
           <div class="comments">
             <app-comments-index *ngIf="Profile" [test]='Profile.ProfileID'></app-comments-index>

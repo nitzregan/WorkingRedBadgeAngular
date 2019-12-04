@@ -22,14 +22,14 @@
                         <br>
                         <mat-form-field>
                             <mat-label>Select Role</mat-label>
-                            <select matNativeControl formControlName="role" type="role" required>
+                            <select matNativeControl formControlName="role" type="role" [(ngModel)]="optionValue" required>
                                 <option value="Coach">Coach</option>
                                 <option value="Athlete">Athlete</option>
                                 <option value="Parent">Parent</option>
                             </select>
                         </mat-form-field>
                         <br>
-                        <mat-form-field *ngIf="role == Parent">
+                        <mat-form-field *ngIf="optionValue == 'Parent'">
                             <input matInput placeholder="Athlete Username" formControlName="athleteUsername"
                                 type="input" />
                         </mat-form-field>
