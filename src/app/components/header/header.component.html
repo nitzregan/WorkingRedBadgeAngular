@@ -6,7 +6,7 @@
     <button *ngIf= "!isLoggedIn" mat-button class="nav-btn" routerLink="/login">Login</button>
     <button *ngIf= "isLoggedIn" (click)="onSubmit()" mat-button class="nav-btn" routerLink= "/login">Logout</button> 
     <button *ngIf= "isLoggedIn" mat-button class="nav-btn" routerLink="/calendar">Calendar</button>
-    <!-- <button *ngIf= "isLoggedIn" mat-button class="nav-btn" routerLink="/profile/get-profile/{{localStorage.getItem('UserID')}}">Profile</button> -->
+    <button *ngIf= "isLoggedIn" mat-button class="nav-btn" (click)="onClick()">Profile</button>
 
 </mat-toolbar>
 
