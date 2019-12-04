@@ -29,3 +29,9 @@ body, html{
     border-radius: 3px;
     border: 1px solid #274C5E;
 }
+
+.mat-button{
+    margin-right: .5em;
+    background-color:#F55D3E;
+    color: whitesmoke;
+}

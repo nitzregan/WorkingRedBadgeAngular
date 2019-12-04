@@ -19,22 +19,18 @@
           <br>
           <span>{{Profile.Email}}</span>
           <br>
-          <span></span>
-          <label *ngIf="register == Coach || register == Parent">Phone Number: </label>
+          <label>Phone Number: </label>
           <br>
-          <span *ngIf="register == Coach || register == Parent">{{Profile.PhoneNumber}}</span>
+          <span>{{Profile.PhoneNumber}}</span>
           <br>
-          <span></span>
           <label>Other: </label>
           <br>
           <span>{{Profile.OtherInfo}}</span>
           <br>
-          <span></span>
           <label *ngIf="register == Athlete">Parent: </label>
           <br>
           <span *ngIf="register == Athlete">{{Profile.ParentUsername}}</span>
           <br>
-          <span></span>
           <label *ngIf="register == Parent">Child: </label>
           <br>
           <span *ngIf="register == Parent">{{Profile.AthleteUsername}}</span>
@@ -43,7 +39,6 @@
           <br>
           <span *ngIf="register == Coach || register == Parent">{{Profile.MyTeams}}</span>
           <br>
-          <span></span>
         </div>
       </mat-card-content>
       <mat-card-actions>
@@ -53,25 +48,23 @@
   </div>
 
   <div class="rightSideOfProfile">
-    <!--Team Buttons-->
     <div class="teamNavButtons">
-      <ul>
-        <li>
-          <a routerLink="/team/detail/:TeamID"><button mat-raised-button class="nav-btn" color="primary"
-              type="submit">TeamName</button></a>
-        </li>
-      </ul>
+      <mat-card>
+        <mat-card-content>
+          <app-team-userid></app-team-userid>
+        </mat-card-content>
+      </mat-card>
     </div>
 
     <!--Comments Component goes here-->
     <div class="commentsOnProfile">
-      <div class="comments">
-        <app-comments-index *ngIf="Profile" [test]='Profile.ProfileID'></app-comments-index>
-      </div>
+      <mat-card>
+        <mat-card-content>
+          <div class="comments">
+            <app-comments-index *ngIf="Profile" [test]='Profile.ProfileID'></app-comments-index>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>
-
-<!-- <div class="edit">
-  <app-profile-edit *ngIf="Profile" [test]='Profile.ProfileID'></app-profile-edit>
-</div> -->
