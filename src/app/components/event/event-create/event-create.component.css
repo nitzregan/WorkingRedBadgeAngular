@@ -1,0 +1,20 @@
+.mat-card {
+    width: 30%;
+}
+
+.eventCreateDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.eventCreateForm{
+    display: flex;
+    justify-content: center;
+}
+
+.eventCreateButton {
+    display: flex;
+    justify-content: center;
+}

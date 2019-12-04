@@ -1,22 +1,33 @@
-<h1>Create a comment</h1>
-<hr />
-<form (ngSubmit)="onSubmit()" [formGroup]="commentsCreateForm">
-    <div>
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Name" formControlName="Name" type="Name" required />
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Title" formControlName="Title" type="Title" required />
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Content" formControlName="Content" type="Content" required />
-            </mat-form-field>
-        </div>
-    </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Comment</button>
-</form>
+<div class="commentCreateDiv">
+    <mat-card>
+        <mat-card-content>
+            <h2>Create a Comment</h2>
+            <br>
+            <div class="commentCreateForm">
+                <form (ngSubmit)="onSubmit()" [formGroup]="commentsCreateForm">
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Name" formControlName="Name" type="Name" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="Title" formControlName="Title" type="Title" required />
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <textarea matInput placeholder="Content" formControlName="Content" type="Content" required></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="commentCreateButton">
+                        <button mat-button type="submit">Comment</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- 
+<div class="commentCreateButton">
+        <button mat-button class="nav-btn" color="primary" type="submit">Comment</button>
+    </div> -->
