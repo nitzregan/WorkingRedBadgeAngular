@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from 'src/app/services/profile.service';
-import { TeamService } from 'src/app/services/team.service';
-import { Profile } from 'src/app/models/Profile';
+import { ProfileService } from '../../../services/profile.service';
+import { Profile } from '../../../models/profile';
+import { TeamService } from '../../../services/team.service';
 import { MatTableDataSource } from '@angular/material';
 import {  Router, ActivatedRoute } from '@angular/router';
+// import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-profile-index',
@@ -14,15 +15,15 @@ export class ProfileIndexComponent implements OnInit {
   Profiles;
   profile:Profile;
 
-  constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  columnName = ['FirstName', 'LastName', 'Email', 'AddAthlete']
+  dataSource: MatTableDataSource<Profile>;
 
-  // columnName = ['ProfileID', 'FirstName', 'LastName', 'Email', 'AddAthlete']
-  // dataSource: MatTableDataSource<Profile>;
+  constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.profileService.GetAllProfiles().subscribe((profile: Profile[])=>{
-      console.log(profile);
       this.Profiles = profile;
+      this.dataSource = new MatTableDataSource<Profile>(profile);
     });
   }
   onSubmit(ProfileID){

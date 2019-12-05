@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from 'src/app/services/profile.service';
-import { Profile } from 'src/app/models/Profile';
+import { ProfileService } from '../../../services/profile.service';
+import { Profile } from '../../../models/profile';
 import { MatTableDataSource } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
-import { RegisterUser } from 'src/app/models/register-user';
+// import { RegisterUser } from 'src/app/models/register-user';
 
 @Component({
   selector: 'app-get-profile',

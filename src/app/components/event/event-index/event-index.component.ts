@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService } from 'src/app/services/event.service';
-import { Event } from 'src/app/models/Event';
+import { EventService } from '../../../services/event.service';
+import { Event } from '../../../models/event';
 import {  MatTableDataSource } from '@angular/material';
 @Component({
   selector: 'app-event-index',

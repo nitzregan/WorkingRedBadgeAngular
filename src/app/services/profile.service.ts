@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Profile } from '../models/Profile';
+import { Profile } from '../models/profile';
+import { APIURL } from '../../environments/environment.prod';
 
 const Api_Url = 'https://thepack.azurewebsites.net'
 
@@ -13,18 +14,18 @@ export class ProfileService {
 
   GetProfile(UserID) {
     console.log(UserID)
-      return this.http.get(`${Api_Url}/api/Profile?UserID=${UserID}`, {headers: this.getHeaders() });
+      return this.http.get(`${APIURL}/api/Profile?UserID=${UserID}`, {headers: this.getHeaders() });
   }
   GetAllProfiles() {
-    return this.http.get(`${Api_Url}/api/Profile`, {headers: this.getHeaders() });
+    return this.http.get(`${APIURL}/api/Profile`, {headers: this.getHeaders() });
   }
 
   GetAllProfilesByTeam(TeamID) {
-    return this.http.get(`${Api_Url}/api/Profile?TeamID=${TeamID}`, {headers: this.getHeaders() });
+    return this.http.get(`${APIURL}/api/Profile?TeamID=${TeamID}`, {headers: this.getHeaders() });
   }
 
   UpdateProfile(ProfileEdit) {
-    return this.http.put(`${Api_Url}/api/Profile`, ProfileEdit, {headers: this.getHeaders() });
+    return this.http.put(`${APIURL}/api/Profile`, ProfileEdit, {headers: this.getHeaders() });
   }
 
   private getHeaders() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { TeamMessagingService } from 'src/app/services/team-messaging.service';
+import { TeamMessagingService } from '../../../services/team-messaging.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-team-messaging-create',

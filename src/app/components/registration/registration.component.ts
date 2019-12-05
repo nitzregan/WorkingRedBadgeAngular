@@ -1,6 +1,7 @@
-import { Component, OnInit, createPlatform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl} from "@angular/forms";
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',

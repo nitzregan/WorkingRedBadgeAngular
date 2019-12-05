@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventService } from 'src/app/services/event.service';
-import { Event } from 'src/app/models/Event';
-import { Team } from 'src/app/models/Team';
+import { EventService } from '../../../services/event.service';
+import { Event } from '../../../models/event';
+// import { Team } from 'src/app/models/Team';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({

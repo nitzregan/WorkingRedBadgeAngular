@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/register-user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Token } from '../models/Token';
+import { Token } from '../models/token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { UserInfo } from '../models/user-info';
+import { APIURL } from '../../environments/environment.prod';
 
 const Api_Url = 'https://thepack.azurewebsites.net';
 
@@ -16,12 +17,12 @@ export class AuthService {
   isLoggedIn = new Subject<boolean>();
   constructor(private http: HttpClient, private router: Router) { }
   register(regUserData: RegisterUser) {
-    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData)
+    return this.http.post(`${APIURL}/api/Account/Register`, regUserData)
   }
   login(loginInfo) {
     const authString =
       `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`
-    return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
+    return this.http.post(`${APIURL}/token`, authString).subscribe((token: Token) => {
       localStorage.setItem('id_token', token.access_token);
       this.currentUser().subscribe((_userInfo: UserInfo) => {
         console.log(_userInfo)
@@ -43,12 +44,12 @@ export class AuthService {
       return new Observable(observer => observer.next(false));
     }
     const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
-    return this.http.get(`${Api_Url}/api/Account/UserInfo`, { headers: authHeader });
+    return this.http.get(`${APIURL}/api/Account/UserInfo`, { headers: authHeader });
   }
   logout() {
     localStorage.clear();
     this.isLoggedIn.next(false);
-    this.http.post(`${Api_Url}/api/Account/Logout`, { header: this.setHeaders() });
+    this.http.post(`${APIURL}/api/Account/Logout`, { header: this.setHeaders() });
     this.router.navigate(['/login']).then(() => {window.location.reload()});
   }
   private setHeaders(): HttpHeaders {

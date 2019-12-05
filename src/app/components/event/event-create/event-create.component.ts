@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService } from 'src/app/services/event.service';
+import { EventService } from '../../../services/event.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { Event } from 'src/app/models/Event';
+// import { Event } from 'src/app/models/Event';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-event-create',

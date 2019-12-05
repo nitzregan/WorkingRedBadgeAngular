@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { TeamService } from 'src/app/services/team.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { TeamService } from '../../../services/team.service';
 import { Team } from '../../../models/team';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-team-create',
   templateUrl: './team-create.component.html',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamMessagingService } from 'src/app/services/team-messaging.service';
-import { TeamMessaging } from 'src/app/models/team-messaging';
-import { MatTableDataSource } from '@angular/material';
+import { TeamMessagingService } from '../../../services/team-messaging.service';
+import { TeamMessaging } from '../../../models/team-messaging';
 import { ActivatedRoute, Router} from '@angular/router';
+// import { MatTableDataSource } from '@angular/material';
 @Component({
   selector: 'app-team-messaging-index',
   templateUrl: './team-messaging-index.component.html',

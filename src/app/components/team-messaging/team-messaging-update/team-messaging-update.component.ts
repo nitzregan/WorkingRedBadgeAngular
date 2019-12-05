@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamMessaging } from 'src/app/models/team-messaging';
+import { TeamMessagingService } from '../../../services/team-messaging.service';
+import { TeamMessaging } from '../../../models/team-messaging';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { TeamMessagingService } from 'src/app/services/team-messaging.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-team-messaging-update',
