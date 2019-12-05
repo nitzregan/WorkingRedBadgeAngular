@@ -1,3 +1,5 @@
 <p>team-detail works!</p>
 
 <button (click)="onSubmit()">Roster</button>
+
+<button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>
