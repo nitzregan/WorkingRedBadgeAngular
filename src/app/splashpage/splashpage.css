@@ -1,0 +1,26 @@
+body {
+    background-color: #274c5e;
+}
+
+.splashPage {
+    display: flex;
+}
+
+.signInThings {
+    display: flex;
+    flex-direction: column;
+}
+
+.splashWords {
+    align-self: flex-start;
+}
+
+.loginComponent {
+    align-self: center;
+
+}
+
+.registrationComponent {
+    align-self: center;
+
+}

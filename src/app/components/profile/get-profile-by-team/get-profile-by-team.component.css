@@ -1,0 +1,11 @@
+.rosterContents {
+    display: flex;
+    justify-content: center;
+}
+.profileBio {
+    width: 40%;
+}
+
+.commentCreateComponent {
+    width: 40%;
+}
