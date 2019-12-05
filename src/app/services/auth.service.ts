@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/register-user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Token } from '../models/Token';
+import { Token } from '../models/token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { UserInfo } from '../models/user-info';

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Event } from '../models/Event';
+import { Event } from '../models/event';
 import { Observable } from 'rxjs';
 import { APIURL } from '../../environments/environment.prod';
 

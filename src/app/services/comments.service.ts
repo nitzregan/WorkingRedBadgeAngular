@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Comments } from '../models/Comments';
+import { Comments } from '../models/comments';
 import { Observable } from 'rxjs';
 import { APIURL } from '../../environments/environment.prod';
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Profile } from '../models/Profile';
+import { Profile } from '../models/profile';
 import { APIURL } from '../../environments/environment.prod';
 
 const Api_Url = 'https://thepack.azurewebsites.net'
