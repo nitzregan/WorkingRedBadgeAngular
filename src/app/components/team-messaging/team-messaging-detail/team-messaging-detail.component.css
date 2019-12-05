@@ -1,0 +1,8 @@
+.teamDen {
+    display: flex;
+    margin: auto auto;
+}
+.messageScroll{
+    overflow: auto;
+    height: 15em;
+}
