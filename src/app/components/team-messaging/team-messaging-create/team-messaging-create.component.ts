@@ -12,6 +12,7 @@ export class TeamMessagingCreateComponent implements OnInit {
   constructor(private _form: FormBuilder, private _TeamMessagingService: TeamMessagingService, private _router: Router, private activatedRoute: ActivatedRoute) {
     this.createForm();
    }
+   
   ngOnInit() {
   }
   createForm() {
@@ -24,7 +25,7 @@ export class TeamMessagingCreateComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this._TeamMessagingService.createTeamMessage(this.teamMessagingCreateForm.value, params.get('TeamID')).subscribe(data => {
 
-        this._router.navigate([`/teammessages/${params.get('TeamID')}`]);
+        this._router.navigate([`/team/detail/${params.get('TeamID')}`]);
     });
     });
   }

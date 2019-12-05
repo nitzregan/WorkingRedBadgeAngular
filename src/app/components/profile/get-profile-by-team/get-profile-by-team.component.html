@@ -1,4 +1,4 @@
-<div class="rosterExpansion" *ngFor="let profile of Profiles">
+<div class="rosterExpansion" *ngFor="let item of Profile">
     <mat-accordion>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -7,51 +7,63 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <div>
-                <div>
-                    <label>Name: </label>
-                    <br>
-                    <span>{{item.FirstName}} {{item.LastName}}</span>
-                    <br>
-                    <br>
-                    <label>Birthday: </label>
-                    <br>
-                    <span>{{item.Birthday | date:"shortDate"}}</span>
-                    <br>
-                    <br>
-                    <label *ngIf="register != 'Athlete'">Email: </label>
-                    <br *ngIf="register != 'Athlete'">
-                    <span *ngIf="register != 'Athlete'">{{item.Email}}</span>
-                    <br *ngIf="register != 'Athlete'">
-                    <br *ngIf="register != 'Athlete'">
-                    <label *ngIf="register != 'Athlete'">Phone Number: </label>
-                    <br *ngIf="register != 'Athlete'">
-                    <span *ngIf="register != 'Athlete'">{{item.PhoneNumber}}</span>
-                    <br *ngIf="register != 'Athlete'">
-                    <br *ngIf="register != 'Athlete'">
-                    <label>Other: </label>
-                    <br>
-                    <span>{{item.OtherInfo}}</span>
-                    <br>
-                    <br>
-                    <label *ngIf="register == 'Athlete'">Parent: </label>
-                    <br *ngIf="register == 'Athlete'">
-                    <span *ngIf="register == 'Athlete'">{{item.ParentUsername}}</span>
-                    <br *ngIf="register == 'Athlete'">
-                    <br *ngIf="register == 'Athlete'">
-                    <label *ngIf="register == 'Parent'">Child: </label>
-                    <br *ngIf="register == 'Parent'">
-                    <span *ngIf="register == 'Parent'">{{item.AthleteUsername}}</span>
-                    <br *ngIf="register == 'Parent'">
-                    <br *ngIf="register == 'Parent'">
-                    <label *ngIf="register == 'Coach' || register == 'Athlete'">Teams: </label>
-                    <br *ngIf="register == 'Coach' || register == 'Athlete'">
-                    <span *ngIf="register == 'Coach' || register == 'Athlete'">{{item.MyTeams}}</span>
-                    <br *ngIf="register == 'Coach' || register == 'Athlete'">
-                </div>
+                <mat-card>
+                    <mat-card-content>
+                        <div>
+                            <label>Name: </label>
+                            <br>
+                            <span>{{item.FirstName}} {{item.LastName}}</span>
+                            <br>
+                            <br>
+                            <label>Birthday: </label>
+                            <br>
+                            <span>{{item.Birthday | date:"shortDate"}}</span>
+                            <br>
+                            <br>
+                            <label *ngIf="register != 'Athlete'">Email: </label>
+                            <br *ngIf="register != 'Athlete'">
+                            <span *ngIf="register != 'Athlete'">{{item.Email}}</span>
+                            <br *ngIf="register != 'Athlete'">
+                            <br *ngIf="register != 'Athlete'">
+                            <label *ngIf="register != 'Athlete'">Phone Number: </label>
+                            <br *ngIf="register != 'Athlete'">
+                            <span *ngIf="register != 'Athlete'">{{item.PhoneNumber}}</span>
+                            <br *ngIf="register != 'Athlete'">
+                            <br *ngIf="register != 'Athlete'">
+                            <label>Other: </label>
+                            <br>
+                            <span>{{item.OtherInfo}}</span>
+                            <br>
+                            <br>
+                            <label *ngIf="register == 'Athlete'">Parent: </label>
+                            <br *ngIf="register == 'Athlete'">
+                            <span *ngIf="register == 'Athlete'">{{item.ParentUsername}}</span>
+                            <br *ngIf="register == 'Athlete'">
+                            <br *ngIf="register == 'Athlete'">
+                            <label *ngIf="register == 'Parent'">Child: </label>
+                            <br *ngIf="register == 'Parent'">
+                            <span *ngIf="register == 'Parent'">{{item.AthleteUsername}}</span>
+                            <br *ngIf="register == 'Parent'">
+                            <br *ngIf="register == 'Parent'">
+                            <label *ngIf="register == 'Coach' || register == 'Athlete'">Teams: </label>
+                            <br *ngIf="register == 'Coach' || register == 'Athlete'">
+                            <span *ngIf="register == 'Coach' || register == 'Athlete'">{{item.MyTeams}}</span>
+                            <br *ngIf="register == 'Coach' || register == 'Athlete'">
+                        </div>
+                    </mat-card-content>
+                </mat-card>
             </div>
             <div>
-                <!-- <app-comments-create></app-comments-create> -->
+                <app-comments-create *ngIf="Profile" [test]='item.ProfileID'></app-comments-create>
             </div>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
+<!--
+<mat-card>
+    <mat-card-content>
+        <div>
+            profile info
+        </div>
+    </mat-card-content>
+</mat-card> -->
