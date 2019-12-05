@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CommentsService } from 'src/app/services/comments.service';
-import { Comments } from 'src/app/models/Comments';
+import { CommentsService } from '../../../services/comments.service';
+import { Comments } from '../../../models/comments';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CommentsIndexComponent } from '../comments-index/comments-index.component';
+// import { CommentsIndexComponent } from '../comments-index/comments-index.component';
 @Component({
   selector: 'app-comments-delete',
   templateUrl: './comments-delete.component.html',

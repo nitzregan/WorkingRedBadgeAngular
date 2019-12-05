@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from 'src/app/services/profile.service';
-import { Profile } from 'src/app/models/Profile';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { ProfileService } from '../../../services/profile.service';
+import { Profile } from '../../../models/profile';
+// import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
-import { Team } from 'src/app/models/Team';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TeamService } from 'src/app/services/team.service';
 @Component({
   selector: 'app-get-profile-by-team',
   templateUrl: './get-profile-by-team.component.html',

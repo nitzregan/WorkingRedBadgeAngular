@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TeamMessagingService } from 'src/app/services/team-messaging.service';
-import { TeamMessaging } from 'src/app/models/team-messaging';
+import { TeamMessagingService } from '../../../services/team-messaging.service';
+import { TeamMessaging } from '../../../models/team-messaging';
 
 @Component({
   selector: 'app-team-messaging-detail',

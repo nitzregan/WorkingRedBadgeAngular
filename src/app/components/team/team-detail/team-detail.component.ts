@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TeamService } from 'src/app/services/team.service';
-import { Team } from 'src/app/models/team';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team';
 @Component({
   selector: 'app-team-detail',
   templateUrl: './team-detail.component.html',

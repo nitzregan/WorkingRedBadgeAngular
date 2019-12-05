@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { TeamService } from 'src/app/services/team.service';
-import { Team } from 'src/app/models/team';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team';
+
 @Component({
   selector: 'app-team-userid',
   templateUrl: './team-userid.component.html',

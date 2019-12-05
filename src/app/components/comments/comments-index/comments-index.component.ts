@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CommentsService } from 'src/app/services/comments.service';
+import { CommentsService } from '../../../services/comments.service';
+import { Comments } from '../../../models/comments';
 import { ActivatedRoute } from '@angular/router';
-import { Comments } from 'src/app/models/Comments';
 @Component({
   selector: 'app-comments-index',
   templateUrl: './comments-index.component.html',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from 'src/app/models/team';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { TeamService } from 'src/app/services/team.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Profile } from 'src/app/models/profile';
+import { Profile } from '../../../models/profile';
 @Component({
   selector: 'app-team-addplayer',
   templateUrl: './team-addplayer.component.html',

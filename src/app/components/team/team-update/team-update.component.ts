@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from 'src/app/models/team';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { TeamService } from 'src/app/services/team.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-team-update',

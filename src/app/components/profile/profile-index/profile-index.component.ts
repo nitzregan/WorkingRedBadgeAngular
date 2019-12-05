@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from 'src/app/services/profile.service';
-import { TeamService } from 'src/app/services/team.service';
-import { Profile } from 'src/app/models/Profile';
+import { ProfileService } from '../../../services/profile.service';
+import { Profile } from '../../../models/profile';
+import { TeamService } from '../../../services/team.service';
 import { MatTableDataSource } from '@angular/material';
 import {  Router, ActivatedRoute } from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
+// import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-profile-index',

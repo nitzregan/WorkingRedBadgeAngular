@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { EventService } from 'src/app/services/event.service';
-import { Event } from 'src/app/models/Event';
+import { EventService } from '../../services/event.service';
+import { Event } from '../../models/event';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+// import { Title } from '@angular/platform-browser';
+// import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
