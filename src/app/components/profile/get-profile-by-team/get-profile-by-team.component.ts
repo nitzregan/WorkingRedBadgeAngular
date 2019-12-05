@@ -34,7 +34,7 @@ export class GetProfileByTeamComponent implements OnInit {
     this._activatedRoute.paramMap.subscribe(params => {
       this.teamService.removeAthleteFromRoster(ProfileID, params.get('TeamID')).subscribe(data => {
         console.log(data);
-        this.router.navigate([`team/detail/${params.get('TeamID')}`]);
+        this.router.navigate([`team/detail/${params.get('TeamID')}`]).then(() => {window.location.reload()});;
       })
     })
   }

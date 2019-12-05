@@ -14,8 +14,12 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class CalendarComponent implements OnInit {
   calendarPlugins = [dayGridPlugin, interactionPlugin]; // important!
   testEvents: any = [
-    { title: 'Test 1', start: '2019-12-02T13:00:00', end: '2019-12-03T14:00:00', id: 27, groupId: 24 },
-    { title: 'Test 2', date: '2019-12-04', id: 8, groupId: 30 }
+    { title: 'Practice', start: '2019-12-08T13:00:00', end: '2019-12-03T14:00:00', id: 27, groupId: 24 },
+    { title: 'Film Session', start: '2019-12-04T15:00:00', end: '2019-12-04T16:00:00' , id: 8, groupId: 30 },
+    { title: 'Weights', start: '2019-12-04T13:00:00', end: '2019-12-03T14:00:00' , id: 8, groupId: 30 },
+    { title: 'Guards Only Practice', start: '2019-12-16T16:00:00', end: '2019-12-03T17:30:00' , id: 8, groupId: 30 }
+
+
   ]
   calendarEvents: any = []
   constructor(private eventService: EventService, private activatedRoute: ActivatedRoute, private router: Router) {

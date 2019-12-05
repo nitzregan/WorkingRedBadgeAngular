@@ -15,6 +15,7 @@ export class ProfileIndexComponent implements OnInit {
   Profiles;
   profile:Profile;
 
+
   columnName = ['FirstName', 'LastName', 'Email', 'AddAthlete']
   dataSource: MatTableDataSource<Profile>;
 
