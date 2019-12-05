@@ -3,8 +3,7 @@ import { ProfileService } from 'src/app/services/profile.service';
 import { TeamService } from 'src/app/services/team.service';
 import { Profile } from 'src/app/models/Profile';
 import { MatTableDataSource } from '@angular/material';
-import {  Router } from '@angular/router';
-
+import {  Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile-index',
@@ -15,7 +14,7 @@ export class ProfileIndexComponent implements OnInit {
   Profiles;
   profile:Profile;
 
-  constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router ) { }
+  constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   columnName = ['ProfileID', 'FirstName', 'LastName', 'Email', 'AddAthlete']
   dataSource: MatTableDataSource<Profile>;
@@ -26,12 +25,12 @@ export class ProfileIndexComponent implements OnInit {
       this.Profiles = profile;
     });
   }
-  onSubmit(){
-    this.teamService.addAthleteToRoster(this.profile.ProfileID, this ).subscribe(data =>{
-      console.log(data);
-      this.router.navigate(['profile/index']);
+  onSubmit(ProfileID){
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.teamService.addAthleteToRoster(ProfileID, params.get('TeamID')).subscribe(data =>{
+        console.log(data);
+        this.router.navigate([`profile/index/${params.get('TeamID')}`]);
+      })
     }) //does not work in progress
-
   }
-  
 }
