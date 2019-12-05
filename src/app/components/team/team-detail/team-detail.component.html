@@ -1,5 +1,15 @@
-<p>team-detail works!</p>
-
-<button (click)="onSubmit()">Roster</button>
-
+<div class="teamDen">
+    <div>
+        <mat-card class="messageScroll">
+            <mat-card-content>
+                <div class="messages">
+                    <app-team-messaging-index></app-team-messaging-index>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div>
+        <app-get-profile-by-team></app-get-profile-by-team>
+    </div>
+</div>
 <button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>

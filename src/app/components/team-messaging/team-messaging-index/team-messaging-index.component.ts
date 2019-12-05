@@ -10,7 +10,6 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class TeamMessagingIndexComponent implements OnInit {
   TeamMessaging;
-
   constructor(private teamMesagingService: TeamMessagingService, private activatedRoute: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -19,5 +18,10 @@ export class TeamMessagingIndexComponent implements OnInit {
         this.TeamMessaging = teamMessaging;
     });
     });
+  }
+  onClick() {
+    this.activatedRoute.paramMap.subscribe(data => {
+      this.router.navigate([`teammessages/create/${data.get('TeamID')}`]);
+    })
   }
 }
