@@ -16,8 +16,9 @@ export class ProfileIndexComponent implements OnInit {
 
   constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  // columnName = ['ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments']
-  // dataSource: MatTableDataSource<Profile>;
+  columnName = ['ProfileID', 'FirstName', 'LastName', 'Email', 'AddAthlete']
+  dataSource: MatTableDataSource<Profile>;
+
   ngOnInit() {
     this.profileService.GetAllProfiles().subscribe((profile: Profile[])=>{
       console.log(profile);
