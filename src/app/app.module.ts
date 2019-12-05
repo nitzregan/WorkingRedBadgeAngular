@@ -63,7 +63,7 @@ import { EventIndexComponent } from './components/event/event-index/event-index.
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'calendar', component: CalendarComponent },
+  { path: 'calendar/:TeamID', component: CalendarComponent },
   { path: 'teammessages/:TeamID', component: TeamMessagingIndexComponent },
   { path: 'teammessages/create/:TeamID', component: TeamMessagingCreateComponent },
   { path: 'teammessages/detail/:MessageID', component: TeamMessagingDetailComponent },
@@ -84,7 +84,7 @@ const routes = [
   { path: 'comments/delete/:CommentID', component: CommentsDeleteComponent },
 
   { path: 'event', component: EventIndexComponent },
-  { path: 'event/create', component: EventCreateComponent },
+  { path: 'event/create/:TeamID', component: EventCreateComponent },
   { path: 'event/detail/:EventID/:TeamID', component: EventDetailComponent },
   { path: 'event/edit', component: EventEditComponent },
   { path: 'event/delete/:EventID', component: EventCreateComponent },
