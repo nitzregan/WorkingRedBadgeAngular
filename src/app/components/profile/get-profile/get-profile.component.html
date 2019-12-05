@@ -42,10 +42,6 @@
           <span *ngIf="register == 'Parent'">{{Profile.AthleteUsername}}</span>
           <br *ngIf="register == 'Parent'">
           <br *ngIf="register == 'Parent'">
-          <label *ngIf="register == 'Coach' || register == 'Athlete'">Teams: </label>
-          <br *ngIf="register == 'Coach' || register == 'Athlete'">
-          <span *ngIf="register == 'Coach' || register == 'Athlete'">{{Profile.MyTeams}}</span>
-          <br *ngIf="register == 'Coach' || register == 'Athlete'">
         </div>
       </mat-card-content>
       <mat-card-actions>
@@ -59,6 +55,7 @@
       <mat-card>
         <mat-card-content>
           <app-team-userid></app-team-userid>
+          <i class="material-icons" *ngIf="Profile" routerLink="/team/create/{{Profile.ProfileID}}">add</i>
         </mat-card-content>
       </mat-card>
     </div>
