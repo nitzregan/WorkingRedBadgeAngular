@@ -8,9 +8,9 @@
             </mat-card-content>
         </mat-card>
     </div>
-
     <div>
         <app-get-profile-by-team></app-get-profile-by-team>
     </div>
 </div>
 <button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>
+<button mat-button class="nav-btn" *ngIf="team" routerLink="/profile/index/{{team.TeamID}}">Add Players To Roster</button>

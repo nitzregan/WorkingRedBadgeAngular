@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Event } from '../models/Event';
 import { Observable } from 'rxjs';
 
-const Api_Url= 'https://thepack.azurewebsites.net'
+const Api_Url= 'https://localhost:44373/'
 
 @Injectable({
   providedIn: 'root'
