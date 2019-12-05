@@ -1,6 +1,6 @@
 <div *ngFor="let Profile of Profiles">
     <ul>
         <li>{{Profile.FirstName}} {{Profile.LastName}}</li>
-        <button class="btnIndex" mat-button type="onSubmit">Add Player</button>
+            <button class="btnIndex" mat-button type="submit" (click)="onSubmit(Profile.ProfileID)">Add Player</button>
     </ul>
 </div>
