@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Comments } from '../models/Comments';
 import { Observable } from 'rxjs';
 
-const Api_Url = 'https://localhost:44373/'
+const Api_Url = 'https://thepack.azurewebsites.net'
 
 @Injectable({
   providedIn: 'root'

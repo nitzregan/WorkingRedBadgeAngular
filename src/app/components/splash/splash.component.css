@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: #274c5e;
 }
 
@@ -11,9 +11,7 @@ body {
     flex-direction: column;
 }
 
-.splashWords {
-    align-self: flex-start;
-}
+
 
 .loginComponent {
     align-self: center;
@@ -23,4 +21,32 @@ body {
 .registrationComponent {
     align-self: center;
 
+} */
+
+body{
+    height:638px;
+    width: auto;
+    background-color:#f55d3e;
 }
+.splashWords {
+    font-size: 65px;
+    margin: 0 .3em;
+    color: white;
+}
+.splashWords h1{
+    margin: 0 0;
+}
+.state{
+    margin-top: 5;
+    margin-left:.3em;
+    font-size: 25px;
+    color: White;
+}
+.nav-btn{
+    background-color: #274c5e;
+    width:500px;
+    height: 50px;
+    
+    
+}
+
