@@ -59,6 +59,7 @@ import { EventDetailComponent } from './components/event/event-detail/event-deta
 import { EventEditComponent } from './components/event/event-edit/event-edit.component';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SplashComponent } from './components/splash/splash.component';
 
 
 const routes = [
@@ -95,8 +96,9 @@ const routes = [
   { path: 'profile/get/:TeamID', component: GetProfileByTeamComponent },
   { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
   { path: 'profile/roster/:TeamID', component: GetProfileByTeamComponent },
+  { path: '**', component: LoginComponent },
   // { path: '**', component: RegistrationComponent },
-  { path: '**', component: LoginComponent }
+  // { path: '**', component: SplashComponent}
 
 
   
@@ -137,6 +139,7 @@ const routes = [
     TeamRemoveplayerComponent,
     TeamUseridComponent,
     FooterComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,

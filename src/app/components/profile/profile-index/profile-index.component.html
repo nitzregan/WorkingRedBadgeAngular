@@ -1,6 +1,52 @@
-<div *ngFor="let Profile of Profiles">
+<!-- <div *ngFor="let Profile of Profiles">
     <ul>
         <li>{{Profile.FirstName}} {{Profile.LastName}}</li>
         <button class="btnIndex" mat-button type="onSubmit">Add Player</button>
     </ul>
+</div> -->
+<!-- <div *ngFor="let Profile of Profiles">
+<mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    <ng-container matColumnDef="CategoryType">
+        <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+        <mat-cell *matCellDef="let category"> {{category.CategoryType}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let category">
+            <i matTooltip="Edit Category" aria label="Edit" mat-icon class="material-icons" color="warn"
+                routerLink="/category/edit/{{category.CategoryID}}">edit</i>
+            <i matTooltip="Delete Category" aria label="Delete" class="material-icons"
+                routerLink="/category/delete/{{category.CategoryID}}">delete</i>
+        </mat-cell>
+    </ng-container>
+</mat-table>
+</div> -->
+
+<div *ngFor="let Profile of Profiles">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="FirstName">
+            <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+            <mat-cell *matCellDef="let Profile"> {{Profile.FirstName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="LastName">
+            <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+            <mat-cell *matCellDef="let Profile"> {{Profile.LastName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-cell *matCellDef="let Profile"> {{Profile.Email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="AddAthlete">
+            <mat-header-cell *matHeaderCellDef> Add to Roster </mat-header-cell>
+            <mat-cell> <button class="btnIndex" mat-button type="onSubmit">Add Player</button> </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
 </div>
