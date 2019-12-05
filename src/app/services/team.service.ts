@@ -20,10 +20,10 @@ export class TeamService {
     return this.http.post(`${Api_Url}/api/Team?ProfileID=${ProfileID}`, team, { headers: this.getHeaders() });
   }
   addAthleteToRoster(ProfileID, TeamID) {
-    return this.http.put(`${Api_Url}/api/AddPlayer?ProfileID=${ProfileID}&TeamID=${TeamID}`,{ headers: this.getHeaders() });
+    return this.http.put(`${Api_Url}/api/AddPlayer?ProfileID=${ProfileID}&TeamID=${TeamID}`,null, { headers: this.getHeaders() });
   }
   removeAthleteFromRoster(ProfileID, TeamID) {
-    return this.http.put(`${Api_Url}/api/RemovePlayer?ProfileID=${ProfileID}&TeamID=${TeamID}`, { headers: this.getHeaders() });
+    return this.http.put(`${Api_Url}/api/RemovePlayer?ProfileID=${ProfileID}&TeamID=${TeamID}`,null, { headers: this.getHeaders() });
   }
   updateTeam(team: Team) {
     return this.http.put(`${Api_Url}/api/Team`, team, { headers: this.getHeaders() });
