@@ -1,109 +1,86 @@
 <div *ngFor="let Profile of Profiles">
-    <ul>
-        <li>{{Profile.FirstName}} {{Profile.LastName}}</li>
-            <button class="btnIndex" mat-button type="submit" (click)="onSubmit(Profile.ProfileID)">Add Player</button>
-    </ul>
-</div>
-<!-- <div class="profileExpansion" *ngFor="let item of Profile">
-        <mat-accordion>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <span>{{item.FirstName}} {{item.LastName}}</span>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="profileContents">
-                    <div>
-                        <mat-card>
-                            <mat-card-content>
-                                <div class="profileBio">
-                                    <label>Name: </label>
-                                    <br>
-                                    <span>{{item.FirstName}} {{item.LastName}}</span>
-                                    <br>
-                                    <br>
-                                    <label>Birthday: </label>
-                                    <br>
-                                    <span>{{item.Birthday | date:"shortDate"}}</span>
-                                    <br>
-                                    <br>
-                                    <label *ngIf="register != 'Athlete'">Email: </label>
-                                    <br *ngIf="register != 'Athlete'">
-                                    <span *ngIf="register != 'Athlete'">{{item.Email}}</span>
-                                    <br *ngIf="register != 'Athlete'">
-                                    <br *ngIf="register != 'Athlete'">
-                                    <label *ngIf="register != 'Athlete'">Phone Number: </label>
-                                    <br *ngIf="register != 'Athlete'">
-                                    <span *ngIf="register != 'Athlete'">{{item.PhoneNumber}}</span>
-                                    <br *ngIf="register != 'Athlete'">
-                                    <br *ngIf="register != 'Athlete'">
-                                    <label>Other: </label>
-                                    <br>
-                                    <span>{{item.OtherInfo}}</span>
-                                    <br>
-                                    <br>
-                                    <label *ngIf="register == 'Athlete'">Parent: </label>
-                                    <br *ngIf="register == 'Athlete'">
-                                    <span *ngIf="register == 'Athlete'">{{item.ParentUsername}}</span>
-                                    <br *ngIf="register == 'Athlete'">
-                                    <br *ngIf="register == 'Athlete'">
-                                    <label *ngIf="register == 'Parent'">Child: </label>
-                                    <br *ngIf="register == 'Parent'">
-                                    <span *ngIf="register == 'Parent'">{{item.AthleteUsername}}</span>
-                                    <br *ngIf="register == 'Parent'">
-                                    <br *ngIf="register == 'Parent'">
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
+        <ul>
+            <li>{{Profile.FirstName}} {{Profile.LastName}}</li>
+                <button class="btnIndex" mat-button type="submit" (click)="onSubmit(Profile.ProfileID)">Add Player</button>
+        </ul>
+    </div>
+    <!-- <div class="profileExpansion" *ngFor="let item of Profile">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span>{{item.FirstName}} {{item.LastName}}</span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="profileContents">
+                        <div>
+                            <mat-card>
+                                <mat-card-content>
+                                    <div class="profileBio">
+                                        <label>Name: </label>
+                                        <br>
+                                        <span>{{item.FirstName}} {{item.LastName}}</span>
+                                        <br>
+                                        <br>
+                                        <label>Birthday: </label>
+                                        <br>
+                                        <span>{{item.Birthday | date:"shortDate"}}</span>
+                                        <br>
+                                        <br>
+                                        <label *ngIf="register != 'Athlete'">Email: </label>
+                                        <br *ngIf="register != 'Athlete'">
+                                        <span *ngIf="register != 'Athlete'">{{item.Email}}</span>
+                                        <br *ngIf="register != 'Athlete'">
+                                        <br *ngIf="register != 'Athlete'">
+                                        <label *ngIf="register != 'Athlete'">Phone Number: </label>
+                                        <br *ngIf="register != 'Athlete'">
+                                        <span *ngIf="register != 'Athlete'">{{item.PhoneNumber}}</span>
+                                        <br *ngIf="register != 'Athlete'">
+                                        <br *ngIf="register != 'Athlete'">
+                                        <label>Other: </label>
+                                        <br>
+                                        <span>{{item.OtherInfo}}</span>
+                                        <br>
+                                        <br>
+                                        <label *ngIf="register == 'Athlete'">Parent: </label>
+                                        <br *ngIf="register == 'Athlete'">
+                                        <span *ngIf="register == 'Athlete'">{{item.ParentUsername}}</span>
+                                        <br *ngIf="register == 'Athlete'">
+                                        <br *ngIf="register == 'Athlete'">
+                                        <label *ngIf="register == 'Parent'">Child: </label>
+                                        <br *ngIf="register == 'Parent'">
+                                        <span *ngIf="register == 'Parent'">{{item.AthleteUsername}}</span>
+                                        <br *ngIf="register == 'Parent'">
+                                        <br *ngIf="register == 'Parent'">
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
                     </div>
-                </div>
-            </mat-expansion-panel>
-        </mat-accordion>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div> -->
+    <!-- <div *ngFor="let Profile of Profiles"> -->
+    <!-- <div>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <mat-header-row *matHeaderRowDef="columnName"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: columnName;"></mat-row>
+            <ng-container matColumnDef="FirstName">
+                <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+                <mat-cell *matCellDef="let Profile;"> {{Profile.FirstName}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="LastName">
+                <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+                <mat-cell *matCellDef="let Profile"> {{Profile.LastName}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Email">
+                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell *matCellDef="let Profile"> {{Profile.Email}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="AddAthlete">
+                <mat-header-cell *matHeaderCellDef> Add to Roster </mat-header-cell>
+                <mat-cell> <button class="btnIndex" mat-button type="onSubmit">Add Player</button> </mat-cell>
+            </ng-container>
+        </mat-table>
     </div> -->
-
-<!-- <div *ngFor="let Profile of Profiles">
-    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="FirstName">
-            <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
-            <mat-cell *matCellDef="let Profile"> {{Profile.FirstName}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="LastName">
-            <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
-            <mat-cell *matCellDef="let Profile"> {{Profile.LastName}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="Email">
-            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-            <mat-cell *matCellDef="let Profile"> {{Profile.Email}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="AddAthlete">
-            <mat-header-cell *matHeaderCellDef> Add to Roster </mat-header-cell>
-            <mat-cell> <button class="btnIndex" mat-button type="onSubmit">Add Player</button> </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-</div> -->
-
-<!-- <div *ngFor="let Profile of Profiles">
-<mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-    <ng-container matColumnDef="CategoryType">
-        <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
-        <mat-cell *matCellDef="let category"> {{category.CategoryType}} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="buttons">
-        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-        <mat-cell *matCellDef="let category">
-            <i matTooltip="Edit Category" aria label="Edit" mat-icon class="material-icons" color="warn"
-                routerLink="/category/edit/{{category.CategoryID}}">edit</i>
-            <i matTooltip="Delete Category" aria label="Delete" class="material-icons"
-                routerLink="/category/delete/{{category.CategoryID}}">delete</i>
-        </mat-cell>
-    </ng-container>
-</mat-table>
-</div> -->
+    <!-- </div> -->
