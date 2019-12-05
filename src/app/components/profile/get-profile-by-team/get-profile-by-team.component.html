@@ -54,6 +54,9 @@
                 <div class="commentCreateComponent">
                     <app-comments-create *ngIf="Profile" [test]='item.ProfileID'></app-comments-create>
                 </div>
+                <div class="removeAthleteBtn">
+                    <button type="submit" *ngIf="Profile" (click)="onClick(item.ProfileID)">Remove Player</button>
+                </div>
             </div>
         </mat-expansion-panel>
     </mat-accordion>

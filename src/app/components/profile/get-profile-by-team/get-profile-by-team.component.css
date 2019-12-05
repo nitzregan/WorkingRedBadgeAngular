@@ -6,6 +6,10 @@
     width: 40%;
 }
 
+.removeAthleteBtn {
+    align-self: flex-end;
+}
+
 .commentCreateComponent {
     width: 40%;
 }
