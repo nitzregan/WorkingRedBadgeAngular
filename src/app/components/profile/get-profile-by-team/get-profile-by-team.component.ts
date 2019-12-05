@@ -4,7 +4,8 @@ import { Profile } from 'src/app/models/Profile';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 import { Team } from 'src/app/models/Team';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TeamService } from 'src/app/services/team.service';
 @Component({
   selector: 'app-get-profile-by-team',
   templateUrl: './get-profile-by-team.component.html',
@@ -17,7 +18,7 @@ export class GetProfileByTeamComponent implements OnInit {
   columnName = [
     'ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments'];
   dataSource: MatTableDataSource<Profile>;
-  constructor(private profileService: ProfileService, private _activatedRoute: ActivatedRoute) { }
+  constructor(private profileService: ProfileService, private _activatedRoute: ActivatedRoute, private teamService: TeamService, private router: Router) { }
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routerData => {
       this.profileService.GetAllProfilesByTeam(routerData.get('TeamID')).subscribe((profile: Profile[]) => {
@@ -27,5 +28,14 @@ export class GetProfileByTeamComponent implements OnInit {
         this.Profile = profile;
       });
     });
+  }
+
+  onClick(ProfileID){
+    this._activatedRoute.paramMap.subscribe(params => {
+      this.teamService.removeAthleteFromRoster(ProfileID, params.get('TeamID')).subscribe(data => {
+        console.log(data);
+        this.router.navigate([`team/detail/${params.get('TeamID')}`]);
+      })
+    })
   }
 }

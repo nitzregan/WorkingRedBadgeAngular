@@ -21,6 +21,6 @@ export class TeamDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(routeData => {
       this.router.navigate([`/profile/roster/${routeData.get('TeamID')}`])
     
-  })
-}
+    })
+  }
 }

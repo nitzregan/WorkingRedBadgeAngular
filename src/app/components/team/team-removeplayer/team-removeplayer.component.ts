@@ -3,6 +3,7 @@ import { Team } from 'src/app/models/team';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TeamService } from 'src/app/services/team.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Profile } from 'src/app/models/profile';
 @Component({
   selector: 'app-team-removeplayer',
   templateUrl: './team-removeplayer.component.html',
@@ -10,12 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TeamRemoveplayerComponent implements OnInit {
   team: Team;
+  profile: Profile;
   editForm: FormGroup;
   //private router: Router
   constructor(private formBuilder: FormBuilder, private teamService: TeamService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
       this.teamService.getTeamByID(params.get('TeamID')).subscribe((team: Team) => {
-        this.team = this.team;
+        this.team = team;
         this.createForm();
       });
     });
@@ -37,7 +39,7 @@ export class TeamRemoveplayerComponent implements OnInit {
       Roster: this.editForm.value.Roster,
       TeamEvents: this.editForm.value.TeamEvents,
     };
-    this.teamService.removeAthleteFromRoster(updatedTeam, this.team.ProfileID).subscribe(() =>{
+    this.teamService.removeAthleteFromRoster(this, this.team.ProfileID).subscribe(() =>{
       this.router.navigate(['/team']);
     });
   }
