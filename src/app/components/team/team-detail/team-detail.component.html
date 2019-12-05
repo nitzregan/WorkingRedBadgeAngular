@@ -13,3 +13,6 @@
         <app-get-profile-by-team></app-get-profile-by-team>
     </div>
 </div>
+
+<button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>
+
