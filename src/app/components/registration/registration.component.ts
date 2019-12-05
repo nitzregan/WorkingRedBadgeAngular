@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
   optionValue;
-  private registerForm: FormGroup;
+  registerForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private authservice: AuthService) {
     this.createform();
    }
