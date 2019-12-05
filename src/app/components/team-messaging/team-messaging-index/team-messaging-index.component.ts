@@ -20,4 +20,10 @@ export class TeamMessagingIndexComponent implements OnInit {
     });
     });
   }
+
+  onClick() {
+    this.activatedRoute.paramMap.subscribe(data => {
+      this.router.navigate([`teammessages/create/${data.get('TeamID')}`]);
+    })
+  }
 }
