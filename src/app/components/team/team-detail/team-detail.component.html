@@ -2,10 +2,6 @@
 
     <h1>Team Dashboard</h1>
 
-    <div class="calendarNavButton">
-        <button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>
-    </div>
-    
     <div class="messageIndex">
         <mat-card class="messageScroll">
             <mat-card-content>
@@ -19,5 +15,9 @@
         <app-get-profile-by-team></app-get-profile-by-team>
     </div>
 </div>
-<button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>
-<button mat-button class="nav-btn" *ngIf="team" routerLink="/profile/index/{{team.TeamID}}">Add Players To Roster</button>
+<div class="navigationalButtonsIGuess">
+    <button mat-button class="nav-btn" *ngIf="team" routerLink="/calendar/{{team.TeamID}}">Calendar</button>
+    <br>
+    <br>
+    <button mat-button class="nav-btn" *ngIf="team" routerLink="/profile/index/{{team.TeamID}}">Add Players To Roster</button>
+</div>
