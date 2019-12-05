@@ -55,7 +55,7 @@
       <mat-card>
         <mat-card-content>
           <app-team-userid></app-team-userid>
-          <i class="material-icons" *ngIf="Profile" routerLink="/team/create/{{Profile.ProfileID}}">add</i>
+          <i class="material-icons" *ngIf="Profile && register == 'Coach'" routerLink="/team/create/{{Profile.ProfileID}}">add</i>
         </mat-card-content>
       </mat-card>
     </div>

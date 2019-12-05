@@ -20,3 +20,15 @@
     overflow: auto;
     height: 25em;
 }
+
+.navigationalButtonsIGuess {
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    justify-content: center;
+}
+
+.nav-btn {
+    margin-right: 1em;
+    margin-left: 1em;
+}
