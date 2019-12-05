@@ -1,9 +1,22 @@
 .teamDen {
     display: flex;
     margin: auto auto;
+    margin-top: 2em;
+    flex-direction: column;
+    width: 80%;
+}
+
+.rosterComponent{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.messageIndex {
+    margin-top: 2em;
+
 }
 
 .messageScroll{
     overflow: auto;
-    height: 15em;
+    height: 25em;
 }

@@ -58,6 +58,7 @@ import { EventDeleteComponent } from './components/event/event-delete/event-dele
 import { EventDetailComponent } from './components/event/event-detail/event-detail.component';
 import { EventEditComponent } from './components/event/event-edit/event-edit.component';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const routes = [
@@ -135,6 +136,7 @@ const routes = [
     TeamAddplayerComponent,
     TeamRemoveplayerComponent,
     TeamUseridComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
