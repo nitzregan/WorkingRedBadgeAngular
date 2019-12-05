@@ -4,6 +4,7 @@ import { TeamService } from 'src/app/services/team.service';
 import { Profile } from 'src/app/models/Profile';
 import { MatTableDataSource } from '@angular/material';
 import {  Router, ActivatedRoute } from '@angular/router';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-profile-index',
@@ -14,15 +15,16 @@ export class ProfileIndexComponent implements OnInit {
   Profiles;
   profile:Profile;
 
-  constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  // columnName = ['ProfileID', 'FirstName', 'LastName', 'Email', 'AddAthlete']
-  // dataSource: MatTableDataSource<Profile>;
+  columnName = ['FirstName', 'LastName', 'Email', 'AddAthlete']
+  dataSource: MatTableDataSource<Profile>;
+
+  constructor(private profileService: ProfileService, private teamService: TeamService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.profileService.GetAllProfiles().subscribe((profile: Profile[])=>{
-      console.log(profile);
       this.Profiles = profile;
+      this.dataSource = new MatTableDataSource<Profile>(profile);
     });
   }
   onSubmit(ProfileID){

@@ -63,6 +63,7 @@ import { SplashComponent } from './components/splash/splash.component';
 
 
 const routes = [
+  { path: 'splash', component: SplashComponent},
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'calendar/:TeamID', component: CalendarComponent },
@@ -96,14 +97,9 @@ const routes = [
   { path: 'profile/get/:TeamID', component: GetProfileByTeamComponent },
   { path: 'profile/get-profile/:UserID', component: GetProfileComponent },
   { path: 'profile/roster/:TeamID', component: GetProfileByTeamComponent },
-  //{ path: '**', component: LoginComponent },
-  // { path: '**', component: RegistrationComponent },
-   { path: 'splash', component: SplashComponent}
-
-
-  
+  { path: '**', component: SplashComponent },
+  // { path: '**', component: RegistrationComponent }, 
 ];
-
 
 @NgModule({
   declarations: [

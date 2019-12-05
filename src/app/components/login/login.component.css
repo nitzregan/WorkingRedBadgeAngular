@@ -31,3 +31,9 @@
     justify-content: space-around;
     text-align: center;
 }
+.backgroundImage{
+    height:600px;
+    width: auto;
+    opacity: 0.2;
+    z-index: 1;
+}

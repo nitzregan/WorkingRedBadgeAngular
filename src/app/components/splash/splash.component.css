@@ -24,7 +24,7 @@
 } */
 
 body{
-    height:638px;
+    height:658px;
     width: auto;
     background-color:#f55d3e;
 }
@@ -46,7 +46,8 @@ body{
     background-color: #274c5e;
     width:500px;
     height: 50px;
-    
-    
+    font-size: 30px;
 }
-
+.splashImage{
+    flex-wrap: wrap;
+}
